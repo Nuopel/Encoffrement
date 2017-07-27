@@ -133,7 +133,6 @@ w_p &= Ce^{-jwt-jkx3} \text{, la solution propagative}\\
 w_e &= Ce^{-jwt-kx3}\text{, la solution évanescente,}\\
 \end{cases}
 \end{align}
-
 Donc les équations aux deux plaques identiques sont : 
 \begin{align}
 \begin{cases}
@@ -159,12 +158,12 @@ Les équations de continuités sont :
 \textbf{ plaque 1}&\begin{cases}
 \frac{\partial P_{1,1}}{\partial x_1}+\frac{\partial P_{1,2}}{\partial x_1} = \rho_0\omega^2w_1(x_3,t)\text{ à }x_1=0\\
 \frac{\partial P_{2,1}}{\partial x_1}+\frac{\partial P_{2,2}}{\partial x_1}  = \rho_0 \omega^2 w_1(x_3,t)\text{ à }x_1=0\\
--\mu \omega^2w_1+D\nabla^4w_1 = P_{1,1}+P_{1,2}-P_{2,1}-P_{2,2} \text{ à }x_1=0\text{.}
+-\mu_1 \omega^2w_1+D_1\nabla^4w_1 = P_{1,1}+P_{1,2}-P_{2,1}-P_{2,2} \text{ à }x_1=0\text{.}
 \end{cases}\\
 \textbf{ plaque 2}&\begin{cases}
 \frac{\partial P_{2,1}}{\partial x_1}+\frac{\partial P_{2,2}}{\partial x_1} = \rho_0\omega^2w_2(x_3,t)\text{ à }x_1=e\\
 \frac{\partial P_{3}}{\partial x_1} = \rho_0 \omega^2 w_2(x_3,t)\text{ à }x_1=e\\
--\mu \omega^2w_2+D\nabla^4w_2 =P_{2,1}+P_{2,2}-P_3 \text{ à }x_1=e\text{.}
+-\mu_2 \omega^2w_2+D_2\nabla^4w_2 =P_{2,1}+P_{2,2}-P_3 \text{ à }x_1=e\text{.}
 \end{cases}
 \end{align}
 Soit sous forme de système complet : 
@@ -172,10 +171,10 @@ Soit sous forme de système complet :
 \begin{cases}
 j k_1 \cos\theta (-1+A_{ref}) e^{-jk_1\sin\theta x_3} = -\rho_0\omega^2 C_{1}e^{-jk_{p1}x3}\\
 j k_2 \cos\theta (-A_{tr2}+A_{ref2}) e^{-jk_2\sin\theta x_3} = -\rho_0\omega^2 C_{1}e^{-jk_{p1}x3}\\
--\mu \omega^2C_{1}e^{-jk_{p1}x3}+Dk_{p1}^4C_{1}e^{-jk_{p1}x3} = -e^{-jk_1\sin\theta x_3}-A_{ref}e^{-jk_1\sin\theta x_3}+A_{tr2}e^{-jk_2\sin\theta x_3}+A_{ref2}e^{-jk_2\sin\theta x_3}\\
+-\mu_1 \omega^2C_{1}e^{-jk_{p1}x3}+D_1k_{p1}^4C_{1}e^{-jk_{p1}x3} = -e^{-jk_1\sin\theta x_3}-A_{ref}e^{-jk_1\sin\theta x_3}+A_{tr2}e^{-jk_2\sin\theta x_3}+A_{ref2}e^{-jk_2\sin\theta x_3}\\
 j k_2 \cos\theta_2 (-A_{tr2}e^{-jk_2\cos\theta_2 e}+A_{ref2}e^{+jk_2\cos\theta_2 e})e^{-jk_2\sin\theta_2 x_3}  = -\rho_0\omega^2 C_{2}e^{-jk_{p2}x3}\\
 j k_3 \cos\theta_3 (-A_{tr3}) e^{-jk_3\sin\theta_3 x_3-jk_2\cos\theta_2 e} = -\rho_0\omega^2 C_{2}e^{-jk_{p2}x3}\\
--\mu \omega^2C_{2}e^{-jk_{p2}x3}+Dk_{p2}^4C_{2}e^{-jk_{p2}x3} = -A_{tr2}e^{-jk_2\sin\theta_2 x_3-jk_2\cos\theta_2 e}-A_{ref2}e^{-jk_2\sin\theta_2 x_3+jk_2\cos\theta_2 e}+A_{tr3}e^{-jk_3\sin\theta_3 x_3-jk_2\cos\theta_2 e}\text{.}\\
+-\mu_2 \omega^2C_{2}e^{-jk_{p2}x3}+D_2k_{p2}^4C_{2}e^{-jk_{p2}x3} = -A_{tr2}e^{-jk_2\sin\theta_2 x_3-jk_2\cos\theta_2 e}-A_{ref2}e^{-jk_2\sin\theta_2 x_3+jk_2\cos\theta_2 e}+A_{tr3}e^{-jk_3\sin\theta_3 x_3-jk_2\cos\theta_2 e}\text{.}\\
 \end{cases}
 \end{align}
 Les conditions de continuités de vitesse entre les milieux et les plaques entrainent : 
