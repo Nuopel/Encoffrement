@@ -2,6 +2,7 @@ function [ Tau ] = Triple_cloison_Tau_symf_theta(h1,h2,h3,E1,E2,E3,rho,nu1,nu2,n
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 
+
 c0=343; % vitesse de l'air
 rho0=1.2;
 
