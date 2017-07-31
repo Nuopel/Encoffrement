@@ -39,7 +39,7 @@
 \usepackage{titling}
 \newcommand{\subtitle}[1]{%
 	\posttitle{%
-		\par\end{center}
+	%	\par\end{center}
 	\begin{center}\huge#1\end{center}
 	\vskip0.5em}%
 }%%create subtitle section
@@ -55,11 +55,11 @@
 \author{%
 \textsc{Samuel Dupont  }\\ %\thanks{A thank you or further information} \\[1ex] 
 \textsc{Matricule : 16 070 591}\\ \\
-%\normalsize Université du Maine \\ % Your institution
+%\normalsize Universitï¿½ du Maine \\ % Your institution
 \normalsize \href{mailto:Samuel.S.dupont.etu@usherbrooke.ca}{Samuel.S.dupont.etu@usherbrooke.ca} \\ \\
 \textsc{Nambouri Yazid  }\\ %\thanks{A thank you or further information} \\[1ex] 
 \textsc{Matricule: }\\ \\
-%\normalsize Université du Maine \\ % Your institution
+%\normalsize Universitï¿½ du Maine \\ % Your institution
 \normalsize \href{mailto:}{ }\\ \\
 \textsc{Professeur : Alain Berry}\\ \\
 }
@@ -86,82 +86,95 @@
 
 L'objectif de ce projet est de concevoir et tester un encoffrement qui 
 permettant d'isoler le rayonnement d'une source de bruit blanc sur une 
-bande de fréquence de 100 Hz à 10 kHz. Notre but est d'obtenir une 
+bande de frÃ©quence de 100 Hz Ã  10 kHz. Notre but est d'obtenir une 
 insertion minimale de 15 dB tout en ayant la plus faible masse possible 
-de l'encoffrement. La source sonore à isoler est un haut-parleur 
+de l'encoffrement. La source sonore Ã  isoler est un haut-parleur 
 mid-range M-Audio Studiophile DX4 de dimension 21 cm en hauteur, 15 cm 
 en largeur et 16 cm en profondeur pesant 5.4 kg. Le haut parleur sera 
-installé en position verticale dans l'encoffrement comme indique dans la figure (2.1).
+installÃ© en position verticale dans l'encoffrement comme indique dans la figure (2.1).
 
-Ainsi pour réaliser ce projet, nous serons limité à un budget maximal de 100\$ pour l'achat des matériaux devant servir à la fabrication de l'encoffrement. Nous serons aussi limité à seulement 1 m pour les dimensions extérieures dans les 3 directions hauteur, largeur et profondeur.
+Ainsi pour rÃ©aliser ce projet, nous serons limitÃ© Ã  un budget maximal de 100\$ pour l'achat des matÃ©riaux devant servir Ã  la fabrication de l'encoffrement. Nous serons aussi limitÃ© Ã  seulement 1 m pour les dimensions extÃ©rieures dans les 3 directions hauteur, largeur et profondeur.
 
-En fin on examinera, les mesures suivantes pour évaluer le projets:
+En fin on examinera, les mesures suivantes pour Ã©valuer le projets:
 \begin{itemize}
-\item Mesure de la performance de l'encoffrement sur la bande de fréquences mesurées
+\item Mesure de la performance de l'encoffrement sur la bande de frÃ©quences mesurÃ©es
 \end{itemize}
 
 Equation
-\begin{align}
-IL_{G} &= 10log_{10} (\frac{\int \sum_{i}|P_{i,sans} \omega|^2 d\omega}{\int \sum_{i}|P_{i,avec} \omega|^2 d\omega})
-\end{align}
  
-L'intégration ici sera faite sur la bande de fréquence de 100 Hz et 8 
-kHz.\\
-Equation\\
-\begin{itemize}
+L'intÃ©gration ici sera faite sur la bande de frÃ©quence de 100 Hz et 8 
+kHz.
+Equation
 \item Compromis entre la masse totale et l'isolation du bruit:
 \end{itemize}
 
-Equation\\
+Equation
 
-où M est la masse totale de l'encoffrement.\\
+oÃ¹ M est la masse totale de l'encoffrement.
 
 \begin{itemize}
-\item La mesure des pressions acoustiques sera faite à 5 points 
-identifiés dans la figure (2.1). 
+\item La mesure des pressions acoustiques sera faite Ã  5 points 
+identifiÃ©s dans la figure (2.1). 
 \end{itemize}
 
+
 \chapter{Objectif du projet}
-\section{Pré-requis }
+\section{PrÃ©requis }
 \todo{Expliquer les notions affaiblissements, transparence, IL, IT}
 \todo{RAJOUTER PARTIE 2.5 MESURES DE PERFORMANCES}
 
-Avant d'entamer dans les démarches suivies dans ce projet, on definit 
-d'abord certains pré-requis acoustiques dont on s'est servi pour la 
-réalisation de ce projet.\\ \\
-\subsection*{La transparence} 
-La transparence acoustique est definie par: \\
-Euqation \\
-ou et sont respectivement les intensités acoustiques de l'onde transmise et de l'onde incidente normales à la paroi,$\theta $ l'angle d'incidence et $\omega $ la pulsation de l'onde acoustique. \\
-On utilisera la transparence en champ diffus qui nous permettra de trouver l'affaiblissement et la perte par insertion pour le cadre de ce projet. Cette transparence peut être définie par:\\
+Avant d'entamer dans les dÃ©marches suivies dans ce projet, on definit 
+d'abord certains prÃ©-requis acoustiques dont on s'est servi pour la 
+rÃ©alisation de ce projet.
 
-Equation \\
 
-\subsection*{Affaiblissement} 
-L'indice d'affaiblissement est une mesure permettant de caractériser 
+
+2.1.1 La transparence
+
+La transparence acoustique est definie par: 
+
+Euqation
+
+ou et sont respectivement les intensitÃ©s acoustiques de l'onde transmise et de l'onde incidente normales Ã  la paroi,\theta l'angle d'incidence et \omega la pulsation de l'onde acoustique
+
+On utilisera la transparence en champ diffus qui nous permettra de 
+trouver l'affaiblissement et la perte par insertion pour le cadre de ce 
+projet. Cette transparence peut Ãªtre dÃ©finie par:
+
+Equation
+ 
+
+2.1.2 Affaiblissement
+
+L'indice d'affaiblissement est une mesure permettant de caractÃ©riser 
 l'affaiblissement du rayonnement acoustique d'une structure. Il est 
-défini par la formule suivante, et est inversement proportionnel a la 
-transparence acoustique: \\
+dÃ©fini par la formule suivante, et est inversement proportionnel a la 
+transparence acoustique:
 
-Equation \\
+Equation
 
-\subsection*{Perte par insertion}
-
-La perte par insertion globale en bandes 1/3 octave est définie comme: \\
-Equation\\
- où les indices indiquent les pressions acoustiques avec et sans l'encoffrement.\\
+\begin{enumerate}
+\item Perte par insertion
+\end{enumerate}
+La perte par insertion globale en bandes 1/3 octave est dÃ©finie comme:
+ oÃ¹ les indices
+ indiquent les pressions acoustiques avec et sans l'encoffrement. 
+ 
 Supposant qu'en champ diffus, les pressions des ondes planes incidentes 
-ont les mêmes effets sur les plaques on peut réecrire la perte par 
-insertion comme: \\ \\
-Equation \\
+ont les mÃªmes effets sur les plaques on peut rÃ©ecrire la perte par 
+insertion comme:
 
-\subsection*{Mesure de performance de l'encoffrement}
+Equation
 
-Pour mesurer la performance de l'enconfrement, on détermine la perte par 
-insertion mais cette fois-ci en intégrant la somme des pression par 
-rapport au la pulsation de l'onde acoutisque comme indiquée dans la 
-relation suivante: \\ \\
-Equation \\
+\begin{enumerate}
+\item Mesure de performance de l'encoffrement 
+\end{enumerate}
+Pour mesurer la performance de l'enconfrement, on dÃ©termine la perte par 
+insetion mais cette fois-ci en intÃ©grant la somme des pression par 
+rapport au la pulsation de l'onde acoutisque comme indiquÃ©e dans la 
+relation suivante:
+
+Equation
  
  
 
@@ -173,77 +186,77 @@ Equation \\
 	\label{meas}
 \end{figure}
 \chapter{Notion requises}
-\section{Hypothèses générales}
+\section{HypothÃ¨ses gÃ©nÃ©rales}
 \section{Transmission acoustique par une cloison infinie}
 \section{Transmission acoustique par une double cloison infinie}
-\todo{Clean la partie, corriger pour ajouter 2 plaque de taille différente}
-\subsection*{Équations acoustique}
-À partir de considérations physiques on peut directement établir les équations des pressions acoustiques dans chacun des milieux. En effet en assumant une onde plane arrivant sur une plaque infinie on se retrouve avec des solutions d'ondes planes. Les ondes planes étant solutions de l'équation d'onde on a un schéma de propagation acoustique valide.\\ 
-À chaque interface il y a des ondes transmises et des ondes réfléchies, la somme de ces ondes est réduite à une onde transmise et une onde réfléchie.\\ \\
-Les pressions dans les différents milieux sont donc : 
+\todo{Clean la partie, corriger pour ajouter 2 plaque de taille diffÃ©rente}
+\subsection*{Ã‰quations acoustique}
+Ã€ partir de considÃ©rations physiques on peut directement Ã©ablir les Ã©quations des pressions acoustiques dans chacun des milieux. En effet en assumant une onde plane arrivant sur une plaque infinie on se retrouve avec des solutions d'ondes planes. Les ondes planes Ã©tant solutions de l'Ã©quation d'onde on a un schÃ©ma de propagation acoustique valide.\\ 
+Ã€ chaque interface il y a des ondes transmises et des ondes rÃ©flÃ©chies, la somme de ces ondes est rÃ©duite Ã  une onde transmise et une onde rÃ©flÃ©chie.\\ \\
+Les pressions dans les diffÃ©rents milieux sont donc : 
 \begin{align}
 \textbf{milieu 1 :} &
 \begin{cases}
 P_{1,1} &= A_{inc}e^{jwt-jk\cos\theta x_1-jk_1\sin\theta x_3} \text{, la pression incidente}\\
-P_{1,2} &= A_{ref}e^{jwt+jk_1\cos\theta x_1-jk_1\sin\theta x_3}\text{, la pression réfléchie}\\
+P_{1,2} &= A_{ref}e^{jwt+jk_1\cos\theta x_1-jk_1\sin\theta x_3}\text{, la pression rÃ©flÃ©hie}\\
 \end{cases}\\
 \textbf{milieu 2 :} &
 \begin{cases}
 P_{2,1} &= A_{tr2}e^{jwt-jk_2\cos\theta_2 x_1-jk_2\sin\theta_2 x_3} \text{, la pression transmise}\\
-P_{2,2} &= A_{ref2}e^{jwt+jk_2\cos\theta_2 x_1-jk_2\sin\theta_2 x_3}\text{, la pression réfléchie}\\
+P_{2,2} &= A_{ref2}e^{jwt+jk_2\cos\theta_2 x_1-jk_2\sin\theta_2 x_3}\text{, la pression rÃ©flÃ©chie}\\
 \end{cases}\\
 \textbf{milieu 3 :} &
 \begin{cases}
 P_{3} &= A_{3}e^{jwt-jk_3\cos\theta_3 x_1-jk_3\sin\theta_3 x_3} \text{, la pression transmise.}
 \end{cases}
 \end{align}\\
-Par soucis de simplicité, les $e^{jwt}$ seront omis dans les écritures et $A_{inc}=1$.
-\subsection*{Équations mécanique}
-L'équation d'une plaque est donné par : test
+Par soucis de simplicitÃ© les $e^{jwt}$ seront omis dans les Ã©critures et $A_{inc}=1$.
+\subsection*{Ã‰quations mÃ©caniques
+L'Ã‰quation d'une plaque est donnÃ©e par :
 \begin{equation}
 \mu \frac{\partial^2w}{\partial t^2}+D\triangle^4w = p_- -p_+
 \end{equation}
-Les solutions de cette équation pour une plaque infinie sont : 
+Les solutions de cette Ã©quation pour une plaque infinie sont : 
 \begin{align}
 \begin{cases}
 w_p &= Ce^{-jwt-jkx3} \text{, la solution propagative}\\
-w_e &= Ce^{-jwt-kx3}\text{, la solution évanescente,}\\
+w_e &= Ce^{-jwt-kx3}\text{, la solution Ã©vanescente,}\\
 \end{cases}
 \end{align}
-Donc les équations aux deux plaques identiques sont : 
+Donc les Ã©quations aux deux plaques identiques sont : 
 \begin{align}
 \begin{cases}
 w_{p1} &= C_{p1}e^{-jwt-jkx3} \text{, la solution propagative}\\
-w_{e1} &= C_{e1}^{-jwt-kx3}\text{, la solution évanescente}\\
+w_{e1} &= C_{e1}^{-jwt-kx3}\text{, la solution Ã©vanescente}\\
 \end{cases}\\
 \begin{cases}
 w_{p2} &= C_{p2}e^{-jwt-jkx3} \text{, la solution propagative}\\
-w_{e2} &= C_{e2}^{-jwt-kx3}\text{, la solution évanescente,}\\
+w_{e2} &= C_{e2}^{-jwt-kx3}\text{, la solution Ã©vanescente,}\\
 \end{cases}
 \end{align}
-Cependant considérant la plaque excité par des ondes acoustiques, les ondes de la plaque seront toujours supersoniques, les solutions évanescentes n'étant pas physiques on a :
+Cependant considÃ©rant la plaque excitÃ©e par des ondes acoustiques, les ondes de la plaque seront toujours supersoniques, les solutions Ã©vanescentes n'Ã©tant pas physiques on a :
 \begin{align}
 \begin{cases}
 w_{1} &= C_{1}e^{-jwt-jk_{p1}x3} \text{, la solution propagative plaque 1}\\
 w_{2} &= C_{2}e^{-jwt-jk_{p2}x3} \text{, la solution propagative plaque 2}\\
 \end{cases}
 \end{align}
-\textbf{Remarque:} $k_{p1}$ et $k_{p2}$ sont différent du nombre d'onde associé à l'équation de dispersion de la plaque et sont imposés par l'onde acoustique.
-\subsection*{Équations de continuités}
-Les équations de continuités sont : 
+\textbf{Remarque:} $k_{p1}$ et $k_{p2}$ sont diffÃ©rents du nombre d'onde associÃ©e l'Ã©quation de dispersion de la plaque et sont imposÃ©s par l'onde acoustique.
+\subsection*{Ã‰quations de continuitÃ©
+Les Ã‰quations de continuitÃ© sont : 
 \begin{align}
 \textbf{ plaque 1}&\begin{cases}
-\frac{\partial P_{1,1}}{\partial x_1}+\frac{\partial P_{1,2}}{\partial x_1} = \rho_0\omega^2w_1(x_3,t)\text{ à }x_1=0\\
-\frac{\partial P_{2,1}}{\partial x_1}+\frac{\partial P_{2,2}}{\partial x_1}  = \rho_0 \omega^2 w_1(x_3,t)\text{ à }x_1=0\\
--\mu_1 \omega^2w_1+D_1\nabla^4w_1 = P_{1,1}+P_{1,2}-P_{2,1}-P_{2,2} \text{ à }x_1=0\text{.}
+\frac{\partial P_{1,1}}{\partial x_1}+\frac{\partial P_{1,2}}{\partial x_1} = \rho_0\omega^2w_1(x_3,t)\text{ ï¿½ }x_1=0\\
+\frac{\partial P_{2,1}}{\partial x_1}+\frac{\partial P_{2,2}}{\partial x_1}  = \rho_0 \omega^2 w_1(x_3,t)\text{ ï¿½ }x_1=0\\
+-\mu_1 \omega^2w_1+D_1\nabla^4w_1 = P_{1,1}+P_{1,2}-P_{2,1}-P_{2,2} \text{ ï¿½ }x_1=0\text{.}
 \end{cases}\\
 \textbf{ plaque 2}&\begin{cases}
-\frac{\partial P_{2,1}}{\partial x_1}+\frac{\partial P_{2,2}}{\partial x_1} = \rho_0\omega^2w_2(x_3,t)\text{ à }x_1=e\\
-\frac{\partial P_{3}}{\partial x_1} = \rho_0 \omega^2 w_2(x_3,t)\text{ à }x_1=e\\
--\mu_2 \omega^2w_2+D_2\nabla^4w_2 =P_{2,1}+P_{2,2}-P_3 \text{ à }x_1=e\text{.}
+\frac{\partial P_{2,1}}{\partial x_1}+\frac{\partial P_{2,2}}{\partial x_1} = \rho_0\omega^2w_2(x_3,t)\text{ ï¿½ }x_1=e\\
+\frac{\partial P_{3}}{\partial x_1} = \rho_0 \omega^2 w_2(x_3,t)\text{ ï¿½ }x_1=e\\
+-\mu_2 \omega^2w_2+D_2\nabla^4w_2 =P_{2,1}+P_{2,2}-P_3 \text{ ï¿½ }x_1=e\text{.}
 \end{cases}
 \end{align}
-Soit sous forme de système complet : 
+Soit sous forme de systï¿½me complet : 
 \begin{align}
 \begin{cases}
 j k_1 \cos\theta (-1+A_{ref}) e^{-jk_1\sin\theta x_3} = -\rho_0\omega^2 C_{1}e^{-jk_{p1}x3}\\
@@ -254,12 +267,12 @@ j k_3 \cos\theta_3 (-A_{tr3}) e^{-jk_3\sin\theta_3 x_3-jk_2\cos\theta_2 e} = -\r
 -\mu_2 \omega^2C_{2}e^{-jk_{p2}x3}+D_2k_{p2}^4C_{2}e^{-jk_{p2}x3} = -A_{tr2}e^{-jk_2\sin\theta_2 x_3-jk_2\cos\theta_2 e}-A_{ref2}e^{-jk_2\sin\theta_2 x_3+jk_2\cos\theta_2 e}+A_{tr3}e^{-jk_3\sin\theta_3 x_3-jk_2\cos\theta_2 e}\text{.}\\
 \end{cases}
 \end{align}
-Les conditions de continuités de vitesse entre les milieux et les plaques entrainent : 
+Les conditions de continuitï¿½s de vitesse entre les milieux et les plaques entrainent : 
 \begin{equation}
 k_1 \sin\theta = k_{p1} = k_2 \sin\theta_2 =k_{p2}= k_3\sin\theta_3=k\text{.}
 \end{equation}
-Cela signifie l'égalité des nombres d'ondes dans les plaques et des nombres d'ondes dans les fluides. \\
-De plus étant dans les mêmes milieux fluides on peut écrire $k_1 = k_2 = k_3 = k_0$, et $\theta = \theta_2 =\theta_3$ soit :
+Cela signifie l'ï¿½galitï¿½ des nombres d'ondes dans les plaques et des nombres d'ondes dans les fluides. \\
+De plus ï¿½tant dans les mï¿½mes milieux fluides on peut ï¿½crire $k_1 = k_2 = k_3 = k_0$, et $\theta = \theta_2 =\theta_3$ soit :
 \begin{align}
 \begin{cases}
 j k_0 \cos\theta (-1+A_{ref}) e^{-jk_0\sin\theta x_3} = -\rho_0\omega^2 C_{1}e^{-jkx3}\\
@@ -281,7 +294,7 @@ j k_0 \cos\theta (-A_{tr3}) e^{-jk\cos\theta e} +\rho_0\omega^2 C_{2}=0\\
 \end{cases}
 \end{align}
 
-Sous forme de système on obtient (en remplaçant $\cos \theta$ par $\Theta$)
+Sous forme de systÃ¨me on obtient (en remplaï¿½ant $\cos \theta$ par $\Theta$)
 \begin{align}	
 \begin{bmatrix}
 j k_0 \Theta    &0 & 0 &0&\rho_0\omega^2&0  \\
@@ -308,45 +321,45 @@ j k_0 \Theta \\
 0
 \end{Bmatrix}
 \end{align}
-Il est possible de résoudre le système numériquement pour trouver les solutions.
+Il est possible de rï¿½soudre le systï¿½me numï¿½riquement pour trouver les solutions.
 \newpage
-La transparence acoustique est séparant deux milieux acoustiques est donnée par la formule : 
+La transparence acoustique est sï¿½parant deux milieux acoustiques est donnï¿½e par la formule : 
 \begin{equation}
 \tau = \frac{I_t(\omega,\theta)}{I_i(\omega,\theta)}
 \end{equation}
-Où $I_t$ et $I_i$ sont les intensités acoustiques de l'onde transmise et incidente.\\
-L'intensité est donné par :
+Oï¿½ $I_t$ et $I_i$ sont les intensitï¿½s acoustiques de l'onde transmise et incidente.\\
+L'intensitï¿½ est donnï¿½ par :
 \begin{equation}
 I(\omega,\theta) = \frac{1}{2}\Re\{p(0,x_3)v^*(0,x_3)\}
 \end{equation}
-soit pour l'intensité incidente : $I_i(\omega,\theta) = \frac{1}{2}\frac{cos\theta}{\rho_0 c_0}$ et pour soit pour l'intensité transmise : $I_t(\omega,\theta) =\frac{ \Re\{A_t^2\}}{2}\frac{cos\theta}{\rho_0 c_0}$. L'intensité transmise est donc obtenue par :
+soit pour l'intensitï¿½ incidente : $I_i(\omega,\theta) = \frac{1}{2}\frac{cos\theta}{\rho_0 c_0}$ et pour soit pour l'intensitï¿½ transmise : $I_t(\omega,\theta) =\frac{ \Re\{A_t^2\}}{2}\frac{cos\theta}{\rho_0 c_0}$. L'intensitï¿½ transmise est donc obtenue par :
 \begin{equation}
 \tau = \frac{I_t(\omega,\theta)}{I_i(\omega,\theta)} =\Re \{A_t^2\}
 \end{equation}
-L'indice d'affaiblissement est donné par :
+L'indice d'affaiblissement est donnï¿½ par :
 \begin{equation}
 R = 10\log_{10}\frac{1}{\tau}
 \end{equation}
 
-La figure \ref{w} montre les résultats numériques de la cloison calculé précédemment comparés aux résultats analytiques d'une plaque simple.\\ On peut voir plusieurs différences apparaitre entre les deux configurations. Des pics apparaissent, un en basse fréquence à 50 Hz et des harmoniques de 1980 Hz. Le pic en basse fréquence peut être interprété comme le moment où les deux plaques vibrent en opposition de phase, créant une fréquence dite de respiration.\\
-Les fréquences harmoniques sont probablement due à la présence d'ondes stationnaires entre les deux plaques, les murs imposent une condition limite de résonance demi-onde qui se répète à chaque harmonique.\\  La fréquence de coïncidence reste la même, car il y a deux plaques identiques. \\ \\
-Enfin un mot général sur l'affaiblissement, on constate que les performances en très basse fréquences tendent tout deux à zéros, mais sont amélioré de quasiment 6dB en suivant la loi de 6 dB par octave jusqu'à la fréquence de respiration où l'absorption devient minimale. La pente de la cloison double change pour devenir une pente de 12dB par octave. Le comportement à la fréquence de coïncidence reste le même pour les deux configurations mais les performances de la double cloison sont supérieurs de manière générale. Les fréquences de résonances demi ondes mitigent cependant les résultats, mais ils pourraient être compensés en rajoutant un matériau amortissant. 
+La figure \ref{w} montre les rï¿½sultats numï¿½riques de la cloison calculï¿½ prï¿½cï¿½demment comparï¿½s aux rï¿½sultats analytiques d'une plaque simple.\\ On peut voir plusieurs diffï¿½rences apparaitre entre les deux configurations. Des pics apparaissent, un en basse frï¿½quence ï¿½ 50 Hz et des harmoniques de 1980 Hz. Le pic en basse frï¿½quence peut ï¿½tre interprï¿½tï¿½ comme le moment oï¿½ les deux plaques vibrent en opposition de phase, crï¿½ant une frï¿½quence dite de respiration.\\
+Les frï¿½quences harmoniques sont probablement due ï¿½ la prï¿½sence d'ondes stationnaires entre les deux plaques, les murs imposent une condition limite de rï¿½sonance demi-onde qui se rï¿½pï¿½te ï¿½ chaque harmonique.\\  La frï¿½quence de coï¿½ncidence reste la mï¿½me, car il y a deux plaques identiques. \\ \\
+Enfin un mot gï¿½nï¿½ral sur l'affaiblissement, on constate que les performances en trï¿½s basse frï¿½quences tendent tout deux ï¿½ zï¿½ros, mais sont amï¿½liorï¿½ de quasiment 6dB en suivant la loi de 6 dB par octave jusqu'ï¿½ la frï¿½quence de respiration oï¿½ l'absorption devient minimale. La pente de la cloison double change pour devenir une pente de 12dB par octave. Le comportement ï¿½ la frï¿½quence de coï¿½ncidence reste le mï¿½me pour les deux configurations mais les performances de la double cloison sont supï¿½rieurs de maniï¿½re gï¿½nï¿½rale. Les frï¿½quences de rï¿½sonances demi ondes mitigent cependant les rï¿½sultats, mais ils pourraient ï¿½tre compensï¿½s en rajoutant un matï¿½riau amortissant. 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[ width=350px]{./images/th/fig.eps}
 	\caption{Comparaison de l'indice d'affaiblissement d'une plaque simple et d'une cloison }
 	\label{w}
 \end{figure}
-\section{Un modèle fini plus réaliste}
-\section{Influence du matériau poreux}
-\section{Résonateur de Helmholtz }
+\section{Un modï¿½le fini plus rï¿½aliste}
+\section{Influence du matï¿½riau poreux}
+\section{Rï¿½sonateur de Helmholtz }
 \section{Matrice de transfert}
 
-\chapter{Étude théorique : simulation et optimisation}
+\chapter{ï¿½tude thï¿½orique : simulation et optimisation}
 
 \chapter{Construction du prototype}
 
-\chapter{Étude expérimentale et résultats}
+\chapter{ï¿½tude expï¿½rimentale et rï¿½sultats}
 
 \chapter{Conclusion}
 \end{document}
