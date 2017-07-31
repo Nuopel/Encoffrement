@@ -24,20 +24,21 @@ D2= E2*h2^3/(12*(1-nu^2));
 
 %% parameters of the air 
 
-e=0.11; % espace entre les cloisons
+e=0.01; % espace entre les cloisons
 thetad=20;
-
-[ Tau ] = Double_cloison_Tau_Num(h1,h2,E1,E2,f,thetad,rho,nu,nu,e);
+theta = thetad*pi/180;
+[ Tau ] = Double_cloison_Tau_Num(h1,h2,E1,E2,f,theta,rho,nu,nu,e);
 
 
 %% Plot
 f= permute(f,[3 2 1]);
 % 
-% fc1=c0^2/2/pi/(sind(thetad)^2)*sqrt(mu1/D1);% fréquence de coincidence p1
-% fc2=c0^2/2/pi/(sind(thetad)^2)*sqrt(mu2/D2);% fréquence de coincidence p2
+c0=343;
+fc1=c0^2/2/pi/(sin(theta)^2)*sqrt(mu1/D1);% fréquence de coincidence p1
+fc2=c0^2/2/pi/(sin(theta)^2)*sqrt(mu2/D2);% fréquence de coincidence p2fc1
 
-Tau_p1 = Simple_cloison_Tau_Num(h1,E1,f,thetad,rho,nu); % plaque 1 seule
-Tau_p2 = Simple_cloison_Tau_Num(h2,E1,f,thetad,rho,nu);%plaque 2 seule
+Tau_p1 = Simple_cloison_Tau_Num(h1,E1,f,theta,rho,nu); % plaque 1 seule
+Tau_p2 = Simple_cloison_Tau_Num(h2,E1,f,theta,rho,nu);%plaque 2 seule
 
 semilogx(f,10*log10(1./real(abs(Tau))))
 hold on
@@ -45,8 +46,11 @@ semilogx(f,10*log10(1./real(Tau_p1)))
 semilogx(f,10*log10(1./real(Tau_p2)))
 xlabel('Frequence [Hz] log')
 ylabel('Indice d''affaiblissement 10log_{10}')
-legend('Cloison double','Plaque 1', 'Plaque2')
+plot([fc1 fc1],[0 250],'r')
+plot([fc2 fc2],[0 250],'r')
+plot([1*c0/(2*e*cosd(thetad)) 1*c0/(2*e*cosd(thetad))],[0 250],'g')
+plot([402 402],[0 250],'b')
 xlim([f(1) f(end)])
-% fc = wc/2/pi
-% fn =1*c0/(2*e*cosd(thetad))
-% fre=1/(2*pi)*sqrt(2*rho0*(c0)^2/(e*mu*cosd(thetad)^2))
+legend('Cloison double','Plaque 1', 'Plaque2')
+
+% % fre=1/(2*pi)*sqrt(2*rho0*(c0)^2/(e*mu*cosd(thetad)^2))
