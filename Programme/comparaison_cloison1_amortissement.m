@@ -19,7 +19,7 @@ mu2= rho*h2; % poid surfacique de la plaque 1
 D1= E1*h1^3/(12*(1-nu^2));
 D2= E2*h2^3/(12*(1-nu^2));
 
-e=0.08;
+e=0.15;
 %% parameters of the porous material
     %melamine
 %     sigma =10900;      % [N.s.m-4] Static air flow resistivity of material
@@ -29,16 +29,24 @@ e=0.08;
 %     lambdap  = 130e-6;    % [um] Thermic length 
 %     tortu = 1;    % [/] Tortuosity
 %     
-    %% glass wool ?
-    sigma =12500;      % [N.s.m-4] Static air flow resistivity of material
+%     %% glass wool ?
+    sigma =49000;      % [N.s.m-4] Static air flow resistivity of material
     h     = e;       % [m] Thickness of material
-    phi_p   = 0.96;  % [/] Porosity
-    lambda = 46e-6 ;     % [um] Viscous length
-    lambdap  = 53e-6;    % [um] Thermic length 
-    tortu = 1;    % [/] Tortuosity
+    phi_p   = 0.968;  % [/] Porosity
+    lambda = 57e-6 ;     % [um] Viscous length
+    lambdap  = 123e-6;    % [um] Thermic length 
+    tortu = 1.0295;    % [/] Tortuosity
+%     
+%         %% rock wool ?
+%     sigma =20600;      % [N.s.m-4] Static air flow resistivity of material
+%     h     = e;       % [m] Thickness of material
+%     phi_p   = 0.98;  % [/] Porosity
+%     lambda = 120e-6 ;     % [um] Viscous length
+%     lambdap  = 128e-6;    % [um] Thermic length 
+%     tortu = 1.01;    % [/] Tortuosity
 
-[Zp,kp,rhof,Keff] = ChampouxA1j_coef_v2(omega,phi_p,sigma,tortu,lambda,lambdap);
-cf = Zp./rhof;
+% [Zp,kp,rhof,Keff] = ChampouxA1j_coef_v2(omega,phi_p,sigma,tortu,lambda,lambdap);
+% cf = Zp./rhof;
 %% parameters of the air 
 
 rho0=1.2;
@@ -52,17 +60,17 @@ Tau_p1 = Simple_cloison_Tau_Num(h1,E1,f,theta,rho,nu); % plaque 1 seule
 TauD =    Double_cloison_Tau_Num(h1,h2,E1,E2,permute(f,[1 3 2]),theta,rho,nu,nu,e);
 
 %% calcul amortissement
-sigma = 20000;
-[ Zf,kf ] = DelanyBazleyMiki_Coef( sigma, f );%% Plot zone
+sigma = 10000;
+[ Zf,kp ] = DelanyBazleyMiki_Coef( sigma, f );%% Plot zone
 
     %  Calculation for a rigid Wall
     Z_0 = 343*1.2;
     % Miki
-    Z_p_MIK = -1i.*Zf .*cot(kf*h1);
+    Z_p_MIK = -1i.*Zf .*cot(kp*h1);
     alpha_MIK = 1 - ( abs( (Z_p_MIK-Z_0)./( Z_p_MIK +Z_0) ) ).^2;
        
-%     rhof  = Zf ./ (omega.*kf);
-%     cf = Zf./rhof;
+    rhof  = Zf.*kp ./ (omega);
+    cf = Zf./rhof;
 %     
 
 %% calcul plaque + armotissement
@@ -114,7 +122,6 @@ fc2=c0^2/2/pi/(sin(theta)^2)*sqrt(mu2/D2);% fréquence de coincidence p2fc1
         semilogx(f,10*log10(1./abs(TauD_A)))
         xlabel('Frequence [Hz] log')
         ylabel('Indice d''affaiblissement 10log_{10}')
-        legend('cloison','cloison+amortissement')
         for ii = 1:5
         plot([1*c0*ii/(2*e*cosd(thetad)) 1*c0*ii/(2*e*cosd(thetad))],[0 250],'g')
         end
@@ -123,4 +130,6 @@ fc2=c0^2/2/pi/(sin(theta)^2)*sqrt(mu2/D2);% fréquence de coincidence p2fc1
         plot([fc2 fc2],[0 250],'r')
         plot([1*c0/(2*e*cosd(thetad)) 1*c0/(2*e*cosd(thetad))],[0 250],'g')
         xlim([f(1) f(end)])
+            legend('cloison','cloison+amortissement')
+
     FigurePlacecement(1)
