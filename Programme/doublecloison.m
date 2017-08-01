@@ -48,7 +48,9 @@ xlabel('Frequence [Hz] log')
 ylabel('Indice d''affaiblissement 10log_{10}')
 plot([fc1 fc1],[0 250],'r')
 plot([fc2 fc2],[0 250],'r')
-plot([1*c0/(2*e*cosd(thetad)) 1*c0/(2*e*cosd(thetad))],[0 250],'g')
+for ii = 1:5
+plot([1*c0*ii/(2*e*cosd(thetad)) 1*c0*ii/(2*e*cosd(thetad))],[0 250],'g')
+end
 plot([402 402],[0 250],'b')
 xlim([f(1) f(end)])
 legend('Cloison double','Plaque 1', 'Plaque2')
