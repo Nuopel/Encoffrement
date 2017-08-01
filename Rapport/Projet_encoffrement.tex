@@ -129,26 +129,26 @@ L'équation d'une plaque est donné par :
 Les solutions de cette équation pour une plaque infinie sont : 
 \begin{align}
 \begin{cases}
-w_p &= Ce^{-jwt-jkx3} \text{, la solution propagative}\\
-w_e &= Ce^{-jwt-kx3}\text{, la solution évanescente,}\\
+w_p &= Ce^{-jwt-jkx_3} \text{, la solution propagative}\\
+w_e &= Ce^{-jwt-kx_3}\text{, la solution évanescente,}\\
 \end{cases}
 \end{align}
 Donc les équations aux deux plaques identiques sont : 
 \begin{align}
 \begin{cases}
-w_{p1} &= C_{p1}e^{-jwt-jkx3} \text{, la solution propagative}\\
-w_{e1} &= C_{e1}^{-jwt-kx3}\text{, la solution évanescente}\\
+w_{p1} &= C_{p1}e^{-jwt-jkx_3} \text{, la solution propagative}\\
+w_{e1} &= C_{e1}^{-jwt-kx_3}\text{, la solution évanescente}\\
 \end{cases}\\
 \begin{cases}
-w_{p2} &= C_{p2}e^{-jwt-jkx3} \text{, la solution propagative}\\
-w_{e2} &= C_{e2}^{-jwt-kx3}\text{, la solution évanescente,}\\
+w_{p2} &= C_{p2}e^{-jwt-jkx_3} \text{, la solution propagative}\\
+w_{e2} &= C_{e2}^{-jwt-kx_3}\text{, la solution évanescente,}\\
 \end{cases}
 \end{align}
 Cependant considérant la plaque excité par des ondes acoustiques, les ondes de la plaque seront toujours supersoniques, les solutions évanescentes n'étant pas physiques on a :
 \begin{align}
 \begin{cases}
-w_{1} &= C_{1}e^{-jwt-jk_{p1}x3} \text{, la solution propagative plaque 1}\\
-w_{2} &= C_{2}e^{-jwt-jk_{p2}x3} \text{, la solution propagative plaque 2}\\
+w_{1} &= C_{1}e^{-jwt-jk_{p1}x_3} \text{, la solution propagative plaque 1}\\
+w_{2} &= C_{2}e^{-jwt-jk_{p2}x_3} \text{, la solution propagative plaque 2}\\
 \end{cases}
 \end{align}
 \textbf{Remarque:} $k_{p1}$ et $k_{p2}$ sont différent du nombre d'onde associé à l'équation de dispersion de la plaque et sont imposés par l'onde acoustique.
@@ -169,12 +169,12 @@ Les équations de continuités sont :
 Soit sous forme de système complet : 
 \begin{align}
 \begin{cases}
-j k_1 \cos\theta (-1+A_{ref}) e^{-jk_1\sin\theta x_3} = -\rho_0\omega^2 C_{1}e^{-jk_{p1}x3}\\
-j k_2 \cos\theta (-A_{tr2}+A_{ref2}) e^{-jk_2\sin\theta x_3} = -\rho_0\omega^2 C_{1}e^{-jk_{p1}x3}\\
--\mu_1 \omega^2C_{1}e^{-jk_{p1}x3}+D_1k_{p1}^4C_{1}e^{-jk_{p1}x3} = -e^{-jk_1\sin\theta x_3}-A_{ref}e^{-jk_1\sin\theta x_3}+A_{tr2}e^{-jk_2\sin\theta x_3}+A_{ref2}e^{-jk_2\sin\theta x_3}\\
-j k_2 \cos\theta_2 (-A_{tr2}e^{-jk_2\cos\theta_2 e}+A_{ref2}e^{+jk_2\cos\theta_2 e})e^{-jk_2\sin\theta_2 x_3}  = -\rho_0\omega^2 C_{2}e^{-jk_{p2}x3}\\
-j k_3 \cos\theta_3 (-A_{tr3}) e^{-jk_3\sin\theta_3 x_3-jk_2\cos\theta_2 e} = -\rho_0\omega^2 C_{2}e^{-jk_{p2}x3}\\
--\mu_2 \omega^2C_{2}e^{-jk_{p2}x3}+D_2k_{p2}^4C_{2}e^{-jk_{p2}x3} = -A_{tr2}e^{-jk_2\sin\theta_2 x_3-jk_2\cos\theta_2 e}-A_{ref2}e^{-jk_2\sin\theta_2 x_3+jk_2\cos\theta_2 e}+A_{tr3}e^{-jk_3\sin\theta_3 x_3-jk_2\cos\theta_2 e}\text{.}\\
+j k_1 \cos\theta (-1+A_{ref}) e^{-jk_1\sin\theta x_3} = -\rho_0\omega^2 C_{1}e^{-jk_{p1}x_3}\\
+j k_2 \cos\theta (-A_{tr2}+A_{ref2}) e^{-jk_2\sin\theta x_3} = -\rho_0\omega^2 C_{1}e^{-jk_{p1}x_3}\\
+-\mu_1 \omega^2C_{1}e^{-jk_{p1}x_3}+D_1k_{p1}^4C_{1}e^{-jk_{p1}x_3} = -e^{-jk_1\sin\theta x_3}-A_{ref}e^{-jk_1\sin\theta x_3}+A_{tr2}e^{-jk_2\sin\theta x_3}+A_{ref2}e^{-jk_2\sin\theta x_3}\\
+j k_2 \cos\theta_2 (-A_{tr2}e^{-jk_2\cos\theta_2 e}+A_{ref2}e^{+jk_2\cos\theta_2 e})e^{-jk_2\sin\theta_2 x_3}  = -\rho_0\omega^2 C_{2}e^{-jk_{p2}x_3}\\
+j k_3 \cos\theta_3 (-A_{tr3}) e^{-jk_3\sin\theta_3 x_3-jk_2\cos\theta_2 e} = -\rho_0\omega^2 C_{2}e^{-jk_{p2}x_3}\\
+-\mu_2 \omega^2C_{2}e^{-jk_{p2}x_3}+D_2k_{p2}^4C_{2}e^{-jk_{p2}x_3} = -A_{tr2}e^{-jk_2\sin\theta_2 x_3-jk_2\cos\theta_2 e}-A_{ref2}e^{-jk_2\sin\theta_2 x_3+jk_2\cos\theta_2 e}+A_{tr3}e^{-jk_3\sin\theta_3 x_3-jk_2\cos\theta_2 e}\text{.}\\
 \end{cases}
 \end{align}
 Les conditions de continuités de vitesse entre les milieux et les plaques entrainent : 
@@ -185,12 +185,12 @@ Cela signifie l'égalité des nombres d'ondes dans les plaques et des nombres d'on
 De plus étant dans les mêmes milieux fluides on peut écrire $k_1 = k_2 = k_3 = k_0$, et $\theta = \theta_2 =\theta_3$ soit :
 \begin{align}
 \begin{cases}
-j k_0 \cos\theta (-1+A_{ref}) e^{-jk_0\sin\theta x_3} = -\rho_0\omega^2 C_{1}e^{-jkx3}\\
-j k_0 \cos\theta (-A_{tr2}+A_{ref2}) e^{-jk_0\sin\theta x_3} = -\rho_0\omega^2 C_{1}e^{-jkx3}\\
--\mu \omega^2C_{1}e^{-jkx3}+Dk^4C_{1}e^{-jkx3} = -e^{-jk_0\sin\theta x_3}-A_{ref}e^{-jk_0\sin\theta x_3}+A_{tr2}e^{-jk_0\sin\theta x_3}+A_{ref2}e^{-jk_0\sin\theta x_3}\\
-j k_0 \cos\theta (-A_{tr2}e^{-jk\cos\theta e}+A_{ref2}e^{+jk\cos\theta e})e^{-jk\sin\theta x_3}  = -\rho_0\omega^2 C_{2}e^{-jkx3}\\
-j k_0\cos\theta (-A_{tr3}) e^{-jk\sin\theta x_3-jk\cos\theta e} = -\rho_0\omega^2 C_{2}e^{-jkx3}\\
--\mu \omega^2C_{2}e^{-jkx3}+Dk^4C_{2}e^{-jkx3} = -A_{tr2}e^{-jk\sin\theta x_3-jk\cos\theta e}-A_{ref2}e^{-jk\sin\theta x_3+jk\cos\theta e}+A_{tr3}e^{-jk\sin\theta x_3-jk\cos\theta e}\text{.}\\
+j k_0 \cos\theta (-1+A_{ref}) e^{-jk_0\sin\theta x_3} = -\rho_0\omega^2 C_{1}e^{-jkx_3}\\
+j k_0 \cos\theta (-A_{tr2}+A_{ref2}) e^{-jk_0\sin\theta x_3} = -\rho_0\omega^2 C_{1}e^{-jkx_3}\\
+-\mu \omega^2C_{1}e^{-jkx_3}+Dk^4C_{1}e^{-jkx_3} = -e^{-jk_0\sin\theta x_3}-A_{ref}e^{-jk_0\sin\theta x_3}+A_{tr2}e^{-jk_0\sin\theta x_3}+A_{ref2}e^{-jk_0\sin\theta x_3}\\
+j k_0 \cos\theta (-A_{tr2}e^{-jk_0\cos\theta e}+A_{ref2}e^{+jk_0\cos\theta e})e^{-jk_0\sin\theta x_3}  = -\rho_0\omega^2 C_{2}e^{-jkx_3}\\
+j k_0\cos\theta (-A_{tr3}) e^{-jk_0\sin\theta x_3-jk_0\cos\theta e} = -\rho_0\omega^2 C_{2}e^{-jkx_3}\\
+-\mu \omega^2C_{2}e^{-jkx_3}+Dk^4C_{2}e^{-jkx_3} = -A_{tr2}e^{-jk\sin\theta x_3-jk\cos\theta e}-A_{ref2}e^{-jk_0\sin\theta x_3+jk_0\cos\theta e}+A_{tr3}e^{-jk_0\sin\theta x_3-jk_0\cos\theta e}\text{.}\\
 \end{cases}
 \end{align}
 \begin{align}
@@ -210,9 +210,9 @@ Sous forme de système on obtient (en remplaçant $\cos \theta$ par $\Theta$)
 j k_0 \Theta    &0 & 0 &0&\rho_0\omega^2&0  \\
 0       & -j k_0 \Theta & j k_0 \Theta & 0 &\rho_0\omega^2 & 0  \\
 1       & -1 & -1 & 0 &-\mu \omega^2+Dk^4 & 0  \\
-0    &-j k_0 \Theta e^{-jk\Theta e}   & j k_0 \Theta e^{jk\Theta e}   &0&0&\rho_0\omega^2  \\
-0       & 0 & 0 &- j k_0 \Theta e^{-jk\Theta e} &0 & \rho_0\omega^2   \\
-0     & + e^{-jk\Theta e} & +e^{jk\Theta e} & - 	e^{-jk\Theta e} &0 & -\mu \omega^2+Dk^4  \\
+0    &-j k_0 \Theta e^{-jk_0\Theta e}   & j k_0 \Theta e^{jk_0\Theta e}   &0&0&\rho_0\omega^2  \\
+0       & 0 & 0 &- j k_0 \Theta e^{-jk_0\Theta e} &0 & \rho_0\omega^2   \\
+0     & + e^{-jk_0\Theta e} & +e^{jk_0\Theta e} & - 	e^{-jk_0\Theta e} &0 & -\mu \omega^2+Dk^4  \\
 \end{bmatrix}
 \begin{Bmatrix}
 A_{ref} \\
@@ -245,6 +245,7 @@ I(\omega,\theta) = \frac{1}{2}\Re\{p(0,x_3)v^*(0,x_3)\}
 soit pour l'intensité incidente : $I_i(\omega,\theta) = \frac{1}{2}\frac{cos\theta}{\rho_0 c_0}$ et pour soit pour l'intensité transmise : $I_t(\omega,\theta) =\frac{ \Re\{A_t^2\}}{2}\frac{cos\theta}{\rho_0 c_0}$. L'intensité transmise est donc obtenue par :
 \begin{equation}
 \tau = \frac{I_t(\omega,\theta)}{I_i(\omega,\theta)} =\Re \{A_t^2\}
+\label{eq:transparence}
 \end{equation}
 L'indice d'affaiblissement est donné par :
 \begin{equation}
@@ -335,9 +336,237 @@ x\\
 \end{align}
 \section{Un modèle fini plus réaliste}
 \section{Influence du matériau poreux}
+Le matériau poreux est une possibilité pour réduire l'influence des résonances sur l'indice d'affaiblissement. afin de modélisé celui-ci le modèle de Champoux-Allard-Johnson \todo{ref} est utilisé.
+Les paramètres utilisés sont ceux d'une laine de verre qui on été trouvés sur l'article \todo{ref}. Bien que ces paramètres ne sont probablement pas exactement les mêmes que ceux de la laine qui va être utilisé, ils peuvent servir de référence pour voir comment se comporte l'encoffrement avec amortissement.\\ \\
+Le cas étudié est un double encoffrement dont le milieu possède de la laine de verre.
+En repartant des équations de continuités écrite plus haut \todo{ref}, on peut écrire à nouveau les équations et écrire le système : 
+\begin{align}
+\begin{cases}
+j k_0 \cos\theta (-1+A_{ref}) e^{-jk_0\sin\theta x_3} = -\rho_0\omega^2 C_{1}e^{-jkx_3}\\
+j k_p \cos\theta_p (-A_{tr2}+A_{ref2}) e^{-jk_p\sin\theta_p x_3} = -\rho_p\omega^2 C_{1}e^{-jkx_3}\\
+-\mu \omega^2C_{1}e^{-jkx_3}+Dk^4C_{1}e^{-jkx_3} = -e^{-jk_0\sin\theta x_3}-A_{ref}e^{-jk_0\sin\theta x_3}+A_{tr2}e^{-jk_p\sin\theta_p x_3}+A_{ref2}e^{-jk_p\sin\theta_p x_3}\\
+%
+j k_p \cos\theta (-A_{tr2}e^{-jk_p\cos\theta_p e}+A_{ref2}e^{+jk_p\cos\theta_p e})e^{-jk_p\sin\theta_p x_3}  = -\rho_p\omega^2 C_{2}e^{-jkx_3}\\
+j k_0\cos\theta (-A_{tr3}) e^{-jk_0\sin\theta x_3-jk_0\cos\theta e} = -\rho_0\omega^2 C_{2}e^{-jkx_3}\\
+-\mu \omega^2C_{2}e^{-jkx_3}+Dk^4C_{2}e^{-jkx_3} = -A_{tr2}e^{-jk_p\sin\theta_p x_3-jk_p\cos\theta_p e}-A_{ref2}e^{-jk_p\sin\theta_p x_3+jk_p\cos\theta_p e}+A_{tr3}e^{-jk_0\sin\theta x_3-jk_0\cos\theta e}\text{.}\\
+\end{cases}
+\end{align}
+Les conditions de continuités de vitesse entre les milieux et les plaques entrainent : 
+\begin{equation}
+k_0 \sin\theta = k_p \sin\theta_p =k\text{.}
+\end{equation}
+L'angle $\theta_p$ peut être calculé par :
+\begin{equation}
+	\theta_p = \arcsin\frac{k_0 \sin\theta}{k_p} \text{.}
+\end{equation}
+Le système devient : 
+\begin{align}
+\begin{cases}
+j k_0 \cos\theta A_{ref}  +\rho_0\omega^2 C_{1}=j k_0 \cos\theta \\
+j k_p \cos\theta_p (-A_{tr2}+A_{ref2})  +\rho_p\omega^2 C_{1}=0\\
+-\mu \omega^2C_{1}+Dk^4C_{1} +A_{ref} -A_{tr2}-A_{ref2} = -1\\
+j k_p \cos\theta_p (-A_{tr2}e^{-jk_p\cos\theta_p e}+A_{ref2}e^{+jk_p\cos\theta_p e}) +\rho_p\omega^2 C_{2} =0\\
+j k_0 \cos\theta (-A_{tr3}) e^{-jk\cos\theta e} +\rho_0\omega^2 C_{2}=0\\
+-\mu \omega^2C_{2}+Dk^4C_{2} +A_{tr2}e^{-jk_p\cos\theta_p e}+A_{ref2}e^{jk-p\cos\theta_p e}-A_{tr3}e^{-jk\cos\theta e}=0 \text{.}\\
+\end{cases}
+\end{align}
+
+Sous forme de système on obtient (en remplaçant $\cos \theta$ par $\Theta$ et $\cos \theta_p$ par $\Theta_p$ )
+\begin{align}	
+\begin{bmatrix}
+j k_0 \Theta    &0 & 0 &0&\rho_0\omega^2&0  \\
+0       & -j k_p \Theta_p & j k_p \Theta_p & 0 &\rho_p\omega^2 & 0  \\
+1       & -1 & -1 & 0 &-\mu \omega^2+Dk^4 & 0  \\
+0    &-j k_p \Theta_p e^{-jk_p\Theta_p e}   & j k_p \Theta_p e^{jk\Theta_p e}   &0&0&\rho_p\omega^2  \\
+0       & 0 & 0 &- j k_0 \Theta e^{-jk_0\Theta e} &0 & \rho_0\omega^2   \\
+0     & + e^{-jk_p\Theta_p e} & +e^{jk_p\Theta_p e} & - 	e^{-jk_0\Theta e} &0 & -\mu \omega^2+Dk^4  \\
+\end{bmatrix}
+\begin{Bmatrix}
+A_{ref} \\
+A_{tr2} \\
+A_{ref2}\\
+A_{tr3}\\
+C_{1} \\
+C_{2} 
+\end{Bmatrix}
+=\begin{Bmatrix}
+j k_0 \Theta \\
+0 \\
+-1\\
+0\\
+0 \\
+0
+\end{Bmatrix}
+\end{align}
+Le résultat pour les la même configuration que précédemment avec la laine de verre est donné figure \ref{double+amo}, on voit que les pics liés aux ondes stationnaires sont disparus. Bien que ce soir le résultat escompté, la disparition est totale, ce qui laisse planer un doute quand aux résultats. Ces résultats seront comparé avec les résultats de la méthode de transfert de matrice dans la section suivante.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[ width=350px]{./images/th/double_poreux.eps}
+	\caption{Comparaison de l'indice d'affaiblissement d'une plaque double avec et sans amortissement. $\theta = 60\degres$}
+	\label{double+amo}
+\end{figure}
 \section{Résonateur de Helmholtz }
 \section{Matrice de transfert}
+La méthode des matrices transfert permet de décrire la propagation d'une onde dans un milieu, qu'il soit fluide, solide ou poreux. Elle permet de relier les pressions et vitesses de part et d'autre des couches et ainsi d'en obtenir  la réponse.\\
+On limite la représentation de la couche à une matrice $2\text{x}2$, en considérant une onde plane traversant le milieu d'épaisseur finie $h$, avec un angle d'incidence $\theta$, comme représenté sur la figure \ref{monocouche}.\\
 
+\begin{figure}[h!]
+	\centering
+%	\includegraphics[ width=350px]{./images/th/double_poreux.eps}
+	\caption{Onde plane traversant une couche finie}
+	\label{monocouche}
+\end{figure}
+La symétrie du problème permet de déduire les autres direction. On peut ainsi définir le champ acoustique en un point $M$ en utilisant la pression acoustique $P$ et la vitesse particulaire $v_x$ à un point $M'$. Le vecteur d'état formé par ces deux composant est noté $V$.  La matrice de transfert $[T_{gd}]$
+permet d'écrire la relation  entre les vecteurs d'état de part et d'autre du milieu fini considéré :
+\begin{align}
+\begin{split}
+V(M)&=[T_{gd}]V(M')\\
+\begin{bmatrix}
+P(M)\\v_x(M)
+\end{bmatrix}&=
+\begin{bmatrix}
+T_{11} &T_{12}\\
+T_{21} &T_{22}
+\end{bmatrix}
+\begin{bmatrix}
+P(M')\\v_x(M')
+\end{bmatrix}\text{.}
+\end{split}
+\end{align}  
+Tout l'intérêt des matrices de transferts réside dans le cas multi-couches, où le  vecteur $V(M)$ s'écrit en fonction de la multiplication des matrices associés au différentes couches :
+\begin{align}
+\begin{split}
+V(M)&=[T_{1}][T_{2}][T_{3}][T_{\dots}]V(M')\\
+&=[T]V(M')\\&=
+\begin{bmatrix}
+T_{11} &T_{12}\\
+T_{21} &T_{22}
+\end{bmatrix}
+\begin{bmatrix}
+P(M')\\v_x(M')
+\end{bmatrix}\text{,}
+\end{split}
+\end{align}  
+où $[T]$ est une matrice globale $[2\text{x}2]$ reliant la couche d'entré à la couche de sortie.
+\subsection{Cas d'une couche fluide équivalente}
+Dans le cas d'une couche poreuse dotée d'un comportement fluide-équivalent, le champ acoustique est décrit par la pression acoustique $P(M )$ et la composante $v_x (M )$ de la vitesse acoustique selon l'axe $x$ \todo{ref}:
+\begin{equation}
+V(M)=\begin{bmatrix}
+P(M)\\
+v_x(M)\\
+\end{bmatrix}
+\end{equation}
+ La couche poreuse est pour sa part caractérisée par sa densité dynamique $\rho$ et la composante
+ selon l'axe $x$ du nombre d'onde $k_x= (k^2-k^2\sin^2\theta)^{1/2}$, et on a :
+ \begin{equation}
+ [T_{fluide}] = \begin{bmatrix}
+ \cos(k_xe) & j\frac{\omega \rho_f }{k_x}\sin(k_xe)\\
+ j\frac{\omega \rho_f }{k_x}\sin(k_xe) &  \cos(k_xe)
+ \end{bmatrix} 
+ \end{equation}
+ 
+\subsection{Cas d'une couche  élastique fine}
+En considérant un plaque fine avec une onde plane incidente $\theta$. L'impédance de la plaque $Z_p$ est définie par le ratio $(p_1- p_2)/v_p$. En considérant la continuité des vitesse normal de part et d'autre de la plaque on peut écrire la matrice de transfert $[T_{plaque}]$ \todo{ref}:
+\begin{equation}
+\begin{bmatrix}
+p_1 \\v_1
+\end{bmatrix}=
+\begin{bmatrix}
+1 &Z_p\\
+0 &1\\
+\end{bmatrix}
+\begin{bmatrix}
+p_2 \\v_2
+\end{bmatrix} \text{,}
+\end{equation}
+où l'expression de $Z_p$ donné par \todo{ref} est :
+\begin{equation}
+Z_p =  \frac{D}{j\omega}\left[k_a^4\sin^4\theta-k_p^4\right]\text{,}
+\end{equation}
+avec $D$ la rigidité de flexion, et $k_p$ le nombre d'onde dans la plaque donné respectivement par:
+\begin{equation}
+D = \frac{E h^3}{12(1-\nu^2)}
+\end{equation}
+\begin{equation}
+k_p = \sqrt[4]{\omega}\sqrt{\mu/D}
+\end{equation}
+\subsection{Lien avec l'indice d'affaiblissement}
+L'indice d'affaiblissement à déjà été définie précédemment \todo{ref} par le ratio d'énergie transmise et incidente. dans le cours \todo{ref}, il est montré que le l'énergie acoustique peut être écrite comme $ I = \frac{1}{2}\Re\left\lbrace p^*v \right\rbrace$, qui peut être réécrit avec $Z_c=p/v$ par 
+ \begin{equation}
+  I = \frac{1}{2}\Re\left\lbrace\frac{ p^*p }{Z_c}\right\rbrace = \frac{\left|p\right|^2}{2}\Re\left\lbrace\frac{ 1 }{Z_c}\right\rbrace\text{.}
+  \label{eq:energie}
+ \end{equation}
+ En insérant l'Éq. \ref{eq:energie} dans la définition de la transparence acoustique \ref{eq:transparence}on obtient : 
+ \begin{equation}
+  \tau =  \frac{\left|p_t\right|^2}{\left|p_i\right|^2}\frac{ \Re\left\lbrace Z_{c1} \right\rbrace}{\Re\left\lbrace Z_{c2}\right\rbrace}\text{,}
+  \label{eq:Tautrans}
+ \end{equation}
+ où $Z_{c1}$ représente l'impédance caractéristique du coté de l'entrée et $Z_{c2}$ du coté sortie. Ceci est illustré Figure \ref{schematrans}, où la réponse de notre système peut être ramené à une matrice  globale $T$ $\left[2\text{x}2\right]$ constitué de la multiplication matricielle des matrices de différentes couches considérées :
+  \begin{equation}
+ \begin{bmatrix}
+ p_1 \\v_1
+ \end{bmatrix}=
+ \begin{bmatrix}
+ T_{11} &T_{12}\\
+ T_{21} &T_{22}
+ \end{bmatrix}
+ \begin{bmatrix}
+ p_2 \\v_2
+ \end{bmatrix} \text{.}
+	 \label{eq:Tglob}
+ \end{equation}
+  \begin{figure}[h!]
+ 	\centering
+ 	\includegraphics[ width=350px]{./images/th/scheme.png}
+ 	\caption{Schéma matrice de transfert $T$ globale exprimé par la pression $p_1=p_i+p_r$ et $pt = p_2$}
+ 	\label{schematrans}
+ \end{figure}
+La pression et la vélocité sont écris du coté incident par :
+\begin{align}
+\begin{split}
+p_1&=p_i+p_r\\
+v_1&=\frac{(p_i-p_r)}{ Z_{c1}} \text{,}
+\label{eq:p1v1}
+\end{split}
+\end{align}
+la pression et la vélocité sont écris du coté transmis par :
+\begin{align}
+\begin{split}
+p_2&=p_t\\
+v_2&= \frac{p_t}{Z_{c2}}\text{.}
+\label{eq:p2v2}
+\end{split}
+\end{align}
+L'équation \ref{eq:p1v1} permet d'écrire : 
+\begin{equation}
+p_i = \frac{p_1 +v_1Z_{c1}}{2}\text{,}
+\end{equation}
+et en injectant $p_1$ et $v_1$ de l'Éq \ref{eq:Tglob}:
+\begin{equation}
+p_i = \frac{T_{11}p_2+T_{12}v_2+Z_{c1}(T_{21}p_2+T_{22}v_2)}{2}\text{,}
+\end{equation}
+et en remplaçant les valeurs $p_2$ et $v_2$ par celles de l'Éq. \ref{eq:p2v2}:
+\begin{equation}
+p_i = \frac{T_{11}p_t+p_t\frac{T_{12}}{Z_{c2}}+p_tZ_{c1}(T_{21}+\frac{T_{22}}{Z_{c2}})}{2}\text{,}
+\end{equation}
+finalement on obtient en factorisant pat $p_t$ le ratio: 
+\begin{equation}
+\frac{p_i}{p_t} = \frac{1}{2} \left[T_{11}+\frac{T_{12}}{Z_{c2}}+Z_{c1}T_{21}+Z_{c1}\frac{T_{22}}{Z_{c2}}\right]\text{.}
+\label{eq:ratiopipt}
+\end{equation}
+On peut maintenant exprimer le coefficient de transparence Éq.\ref{eq:Tautrans} depuis le ratio trouvé Éq. \ref{eq:ratiopipt} : 
+ \begin{equation}
+\tau =4  \frac{ \Re\left\lbrace Z_{c1} \right\rbrace}{\Re\left\lbrace Z_{c2}\right\rbrace} \left\|T_{11}+\frac{T_{12}}{Z_{c2}}+Z_{c1}T_{21}+Z_{c1}\frac{T_{22}}{Z_{c2}}\right\|^{-2}\text{.}
+\end{equation}
+L'indice d'affaiblissement peut donc s'écrire simplement par :
+\begin{equation}
+R = 20 \log_{10}\left(\frac{ \Re\left\lbrace Z_{c1} \right\rbrace}{\Re\left\lbrace Z_{c2}\right\rbrace} \left\|T_{11}+\frac{T_{12}}{Z_{c2}}+Z_{c1}T_{21}+Z_{c1}\frac{T_{22}}{Z_{c2}}\right\|\right)-6
+\end{equation} 
+et dans le cas spécial d'air de chaque coté :
+\begin{equation}
+R = 20 \log_{10} \left\|T_{11}+\frac{T_{12}}{\rho_0 c_0}\cos\theta+\frac{\rho_0 c_0T_{21}}{\cos\theta}+T_{22}\right\|-6
+\end{equation}
 \chapter{Étude théorique : simulation et optimisation}
 
 \chapter{Construction du prototype}
