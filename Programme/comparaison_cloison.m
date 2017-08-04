@@ -1,7 +1,7 @@
-clear all; clc; close all
+clear variables ; clc; close all
 addpath(genpath('./fonctions'));
 
-f=permute(20:1:20e3,[ 1 3 2]);
+f=permute(100:1:20e3,[ 1 3 2]);
 
 %% parameters of the plate
 h1=10e-3; % epaisseur de la plaque 1
@@ -29,7 +29,7 @@ e=0.2; % espace entre les cloisons 1 et 2
 L=0.35; % espace entre les cloisons 2 et 3
 c0=343; % vitesse de l'air
 rho0=1.2;
-
+Z0=rho0.*c0;
 thetad=80;
 theta=thetad*pi/180;
 TH = cos(theta);
@@ -45,14 +45,16 @@ TauT=Triple_cloison_Tau_Num(h1,h2,h3,E1,E2,E3,f,thetad,rho,nu,nu,nu,e,L);
 %% calcul pour cloison double
 TauD = Double_cloison_Tau_Num(h1,h2,E1,E2,f,theta,rho,nu,nu,e);
 TauD2= Double_cloison_Tau_Num(h2,h3,E2,E3,f,theta,rho,nu,nu,L-e);
-
+% TauD2=Double_cloison_Tau_Num_MatTra(h2,h3,E2,E3,f,k0,theta,rho,rho,nu,nu,L-e,k0,Z0,Z0,Z0);
 %% calcul pour cloison simple
 f=permute(f,[3 2 1]);
 
 fc1=c0^2/2/pi/(sind(thetad)^2)*sqrt(mu1/D1);% fréquence de coincidence p1
 fc2=c0^2/2/pi/(sind(thetad)^2)*sqrt(mu2/D2);% fréquence de coincidence p2
 
-Tau_p1 = Simple_cloison_Tau_Num(h1,E1,f,theta,rho,nu); % plaque 1 seule
+% Tau_p1 = Simple_cloison_Tau_Num(h1,E1,f,theta,rho,nu); % plaque 1 seule
+Tau_p1 = Simple_cloison_Tau_Num_TransMa(h1,E1,permute(f,[3 2 1]),k0,theta,rho,nu,Z0,Z0);
+                                     
 Tau_p2 =  Simple_cloison_Tau_Num(h2,E2,f,theta,rho,nu); % plaque 2 seule
 Tau_p3 =  Simple_cloison_Tau_Num(h3,E3,f,theta,rho,nu); % plaque 3 seule
 
@@ -85,7 +87,7 @@ semilogx(f,10*log10(1./real(abs(TauT))))
 hold on
 semilogx(f,10*log10(1./real(Tau_p1)))
 semilogx(f,10*log10(1./real(Tau_p2)))
-semilogx(f,10*log10(1./real(Tau_p3)))
+semilogx(f,10*log10(1./real(Tau_p3)),'--')
 
 xlabel('Frequence [Hz] log')
 ylabel('Indice d''affaiblissement 10log_{10}')

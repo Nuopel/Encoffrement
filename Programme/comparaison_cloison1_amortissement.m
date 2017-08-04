@@ -1,11 +1,11 @@
-clear all; clc; close all
+clear variables; clc; close all
 addpath(genpath('./fonctions'));
 
 f=20:10:20e3;
 omega = 2*pi*f;
 %% parameters of the plate
-h1=10e-3; % epaisseur de la plaque 1
-h2=20e-3; % epaisseur de la plaque 1
+h1=5e-3; % epaisseur de la plaque 1
+h2=10e-3; % epaisseur de la plaque 2
 
 E1=12.6e9; %young modulus plaque 1 
 E2=13.6e9; %young modulus plaque 1 
@@ -19,23 +19,23 @@ mu2= rho*h2; % poid surfacique de la plaque 1
 D1= E1*h1^3/(12*(1-nu^2));
 D2= E2*h2^3/(12*(1-nu^2));
 
-e=0.15;
+e=0.05;
 %% parameters of the porous material
     %melamine
-%     sigma =10900;      % [N.s.m-4] Static air flow resistivity of material
-%     h     = 2*2.54e-2;       % [m] Thickness of material
-%     phi_p   = 0.99;  % [/] Porosity
-%     lambda = 100e-6 ;     % [um] Viscous length
-%     lambdap  = 130e-6;    % [um] Thermic length 
-%     tortu = 1;    % [/] Tortuosity
+    sigma =10900;      % [N.s.m-4] Static air flow resistivity of material
+    h     = 2*2.54e-2;       % [m] Thickness of material
+    phi_p   = 0.99;  % [/] Porosity
+    lambda = 100e-6 ;     % [um] Viscous length
+    lambdap  = 130e-6;    % [um] Thermic length 
+    tortu = 1;    % [/] Tortuosity
 %     
 %     %% glass wool ?
-    sigma =49000;      % [N.s.m-4] Static air flow resistivity of material
-    h     = e;       % [m] Thickness of material
-    phi_p   = 0.968;  % [/] Porosity
-    lambda = 57e-6 ;     % [um] Viscous length
-    lambdap  = 123e-6;    % [um] Thermic length 
-    tortu = 1.0295;    % [/] Tortuosity
+%     sigma =9000;      % [N.s.m-4] Static air flow resistivity of material
+%     h     = e;       % [m] Thickness of material
+%     phi_p   = 0.968;  % [/] Porosity
+%     lambda = 57e-6 ;     % [um] Viscous length
+%     lambdap  = 123e-6;    % [um] Thermic length 
+%     tortu = 1.0295;    % [/] Tortuosity
 %     
 %         %% rock wool ?
 %     sigma =20600;      % [N.s.m-4] Static air flow resistivity of material
@@ -60,18 +60,17 @@ Tau_p1 = Simple_cloison_Tau_Num(h1,E1,f,theta,rho,nu); % plaque 1 seule
 TauD =    Double_cloison_Tau_Num(h1,h2,E1,E2,permute(f,[1 3 2]),theta,rho,nu,nu,e);
 
 %% calcul amortissement
-sigma = 10000;
+sigma = 4000;
 [ Zf,kp ] = DelanyBazleyMiki_Coef( sigma, f );%% Plot zone
 
     %  Calculation for a rigid Wall
     Z_0 = 343*1.2;
     % Miki
-    Z_p_MIK = -1i.*Zf .*cot(kp*h1);
+    Z_p_MIK = -1i.*Zf .*cot(kp*e);
     alpha_MIK = 1 - ( abs( (Z_p_MIK-Z_0)./( Z_p_MIK +Z_0) ) ).^2;
        
     rhof  = Zf.*kp ./ (omega);
     cf = Zf./rhof;
-%     
 
 %% calcul plaque + armotissement
 Tau_p1_A  = Simple_cloison_Amorti_Tau_Num(h1,E1,f,theta,rho,nu,rhof,cf);
