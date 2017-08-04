@@ -24,7 +24,7 @@ D2= E2*h2^3/(12*(1-nu^2));
 
 %% parameters of the air 
 
-e=0.01; % espace entre les cloisons
+e=0.05; % espace entre les cloisons
 thetad=20;
 theta = thetad*pi/180;
 [ Tau ] = Double_cloison_Tau_Num(h1,h2,E1,E2,f,theta,rho,nu,nu,e);
@@ -40,6 +40,7 @@ fc2=c0^2/2/pi/(sin(theta)^2)*sqrt(mu2/D2);% fréquence de coincidence p2fc1
 Tau_p1 = Simple_cloison_Tau_Num(h1,E1,f,theta,rho,nu); % plaque 1 seule
 Tau_p2 = Simple_cloison_Tau_Num(h2,E1,f,theta,rho,nu);%plaque 2 seule
 
+hold on
 semilogx(f,10*log10(1./real(abs(Tau))))
 hold on
 semilogx(f,10*log10(1./real(Tau_p1)))
@@ -51,7 +52,7 @@ plot([fc2 fc2],[0 250],'r')
 for ii = 1:5
 plot([1*c0*ii/(2*e*cosd(thetad)) 1*c0*ii/(2*e*cosd(thetad))],[0 250],'g')
 end
-plot([402 402],[0 250],'b')
+% plot([402 402],[0 250],'b')
 xlim([f(1) f(end)])
 legend('Cloison double','Plaque 1', 'Plaque2')
 
