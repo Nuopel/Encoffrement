@@ -1,4 +1,4 @@
-clear all; clc; close all
+clear variable; clc; close all
 addpath(genpath('./fonctions'));
 
 %% parameters of the plate
@@ -35,7 +35,7 @@ mu= rho*h1; % poid surfacique de la plaque 1
 omega = 2*pi*f;
 D= E1*h1^3/(12*(1-nu^2));
 k0 = omega/c0;
-Tau = Simple_cloison_Tau_Num(h1,E1,f,theta,rho,nu);; % plaque 1 seule
+Tau = Simple_cloison_Tau_Num(h1,E1,f,theta,rho,nu); % plaque 1 seule
 % T_dif= 2*vpaintegral(Tau*cos(theta)*sin(theta),theta,0,70*pi/180);
 %%
 fn=20:5:16000;
