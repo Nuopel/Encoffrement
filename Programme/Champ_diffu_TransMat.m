@@ -69,7 +69,9 @@ semilogx(fn,10*log10(1./Tc))
 hold on 
 
 %% Double cloison
-Tau =Double_cloison_Tau_syms_MatTra(h1,h2,E1,E2,f,k0,theta,rho,rho,nu,nu,e,kf,Z0,Z0,Z0,eta); % double cloison
+% Tau =Double_cloison_Tau_syms_MatTra(h1,h2,E1,E2,f,k0,theta,rho,rho,nu,nu,e,k0,Z0,Z0,Z0); % double cloison
+Tau = Double_cloison_Tau_symf_theta(h1,h2,E1,E2,f,theta,rho,nu,nu,e);
+
 Taup =Double_cloison_Tau_syms_MatTra(h1,h2,E1,E2,f,kf,theta,rho,rho,nu,nu,e,kf,Zf,Zf,Z0,eta); % double cloison amortie
 fn=20:10:16000;
 
