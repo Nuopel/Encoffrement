@@ -40,7 +40,6 @@ fc2=c0^2/2/pi/(sin(theta)^2)*sqrt(mu2/D2);% fréquence de coincidence p2fc1
 Tau_p1 = Simple_cloison_Tau_Num(h1,E1,f,theta,rho,nu); % plaque 1 seule
 Tau_p2 = Simple_cloison_Tau_Num(h2,E1,f,theta,rho,nu);%plaque 2 seule
 
-hold on
 semilogx(f,10*log10(1./real(abs(Tau))))
 hold on
 semilogx(f,10*log10(1./real(Tau_p1)))
