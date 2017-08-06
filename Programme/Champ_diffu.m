@@ -53,14 +53,14 @@ hold on
 %% Double cloison
 Tau = Double_cloison_Tau_symf_theta(h1,h2,E1,E2,f,theta,rho,nu,nu,e);
 % T_dif= 2*vpaintegral(Tau*cos(theta)*sin(theta),theta,0,70*pi/180);
-%%
+%
 fn=20:25:16000;
 Tc=zeros(length(fn),1);
 
 T_dif = matlabFunction(Tau*cos(theta)*sin(theta));
 tic
 for ii=1:length(fn)
-    Tc(ii)=2*integral(@(theta)T_dif(fn(ii),theta),0,70*pi/180);
+    Tc(ii)=2*integral(@(theta)T_dif(fn(ii),theta),0,50*pi/180);
     % Tc(ii)=double(subs(T_dif,f,fn(ii)));
     fprintf('%i pc \n',round(ii/length(fn)*100))
 end
@@ -77,7 +77,7 @@ Tc=zeros(length(f),1);
 
 tic
 for ii=1:length(fn)
-Tc(ii)=2*integral(@(theta)T_dift(fn(ii),theta),0,75*pi/180);
+Tc(ii)=2*integral(@(theta)T_dift(fn(ii),theta),0,50*pi/180);
 % Tc(ii)=double(subs(T_dif,f,fn(ii)));
 fprintf('%i pc \n',round(ii/length(fn)*100))
 end
