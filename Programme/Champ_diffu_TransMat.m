@@ -50,7 +50,7 @@ mu= rho*h1; % poid surfacique de la plaque 1
 D= E1*h1^3/(12*(1-nu^2));
 eta=0;
 Tau =Simple_cloison_Tau_syms_TransMa(h1,E1,f,k0,theta,rho,nu,Z0,Z0,eta); % plaque 1 seule
-Taup =Simple_cloison_Tau_syms_TransMa(h1,E1,f,kf,theta,rho,nu,Zf,Z0,eta); % plaque 1 seule
+Taup =Simple_cloison_Tau_syms_AM_TransMa(h1,E1,f,k0,theta,rho,nu,0.02,kf,Zf,Z0,Z0,eta); % plaque 1 seule
 
 %%
 fn=20:5:16000;
@@ -72,7 +72,7 @@ hold on
 % Tau =Double_cloison_Tau_syms_MatTra(h1,h2,E1,E2,f,k0,theta,rho,rho,nu,nu,e,k0,Z0,Z0,Z0); % double cloison
 Tau = Double_cloison_Tau_symf_theta(h1,h2,E1,E2,f,theta,rho,nu,nu,e);
 
-Taup =Double_cloison_Tau_syms_MatTra(h1,h2,E1,E2,f,kf,theta,rho,rho,nu,nu,e,kf,Zf,Zf,Z0,eta); % double cloison amortie
+Taup =Double_cloison_Tau_syms_AM_MatTra(h1,h2,E1,E2,f,k0,theta,rho,rho,nu,nu,e,0.02,kf,kf,Zf,Zf,Z0,Z0,eta); % double cloison amortie
 fn=20:10:16000;
 
 Tc=zeros(length(fn),2);
@@ -86,12 +86,12 @@ Tc(ii,2)=2*integral(@(theta)T_difp(fn(ii),theta),0,thetalim);
 fprintf('%i pc \n',round(ii/length(fn)*100))
 end
 toc
-semilogx(fn,10*log10(1./Tc))
+semilogx(fn,10*log10(1./abs(Tc)))
 hold on 
  
 %% Triple cloison
 Tau = triple_cloison_Tau_syms_TransMat(h1,h2,h3,E1,E2,E3,f,k0,theta,rho,rho,rho,nu,nu,nu,e,L,k0,k0,Z0,Z0,Z0,Z0,eta); % triple cloison
-Taup =triple_cloison_Tau_syms_TransMat(h1,h2,h3,E1,E2,E3,f,kf,theta,rho,rho,rho,nu,nu,nu,e,L,kf,kf,Zf,Zf,Zf,Z0,eta); % double cloison amortie
+Taup =triple_cloison_Tau_syms_AM_TransMat(h1,h2,h3,E1,E2,E3,f,k0,theta,rho,rho,rho,nu,nu,nu,e,L,0.02,kf,kf,kf,Zf,Zf,Zf,Z0,Z0,eta); % double cloison amortie
 fn=20:10:16000;
 
 Tc=zeros(length(fn),2);
