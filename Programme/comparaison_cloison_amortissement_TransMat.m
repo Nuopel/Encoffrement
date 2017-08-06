@@ -24,8 +24,8 @@ D2= E2*h2^3/(12*(1-nu^2));
 D3= E3*h3^3/(12*(1-nu^2));
 
 e=0.1;
-L=0.04;
-eta=0.5e-1;
+L=0.01;
+eta=0;
 %% parameters of the porous material
 %     %% glass wool ?
     sigma =9000;      % [N.s.m-4] Static air flow resistivity of material
@@ -37,12 +37,13 @@ eta=0.5e-1;
 
 [Zf,kf,rhof,Keff] = ChampouxA1j_coef_v2(omega,phi_p,sigma,tortu,lambda,lambdap);
 cf = Zf./rhof;
+
 %% parameters of the air 
 rho0=1.2;
 c0=343;
 Z0=c0*rho0;
 k0=omega./c0;
-thetad=20;
+thetad=40;
 theta=thetad*pi/180;
 
 %% calcul pour cloison simple
@@ -51,20 +52,25 @@ Tau_p2 =  Simple_cloison_Tau_Num_TransMa(h2,E2,f,k0,theta,rho,nu,Z0,Z0,eta); % p
 Tau_p3 =  Simple_cloison_Tau_Num_TransMa(h3,E3,f,k0,theta,rho,nu,Z0,Z0,eta); % plaque 1 seule
 
 %% calcul plaque double + armotissement
-Tau_p1_A  = Simple_cloison_Tau_Num_TransMa(h1,E1,f,kf,theta,rho,nu,Zf,Z0,eta); % plaque 1 seule
+% Tau_p1_A  = Simple_cloison_Tau_Num_TransMa(h1,E1,f,kf,theta,rho,nu,Zf,Z0,eta); % plaque 1 seule
+Tau_p1_A  = Simple_cloison_Tau_Num_AM_TransMa(h1,E1,f,k0,theta,rho,nu,Z0,Z0,e,kf,Zf,eta); % plaque 1 seule
+
 Tau_p2_A  = Simple_cloison_Tau_Num_TransMa(h2,E2,f,kf,theta,rho,nu,Zf,Z0,eta); % plaque 1 seule
 Tau_p3_A  = Simple_cloison_Tau_Num_TransMa(h3,E3,f,kf,theta,rho,nu,Zf,Z0,eta); % plaque 1 seule
 
-TauD_A =  Double_cloison_Tau_Num_MatTra(h1,h2,E1,E2,f,kf,theta,rho,rho,nu,nu,e,kf,Zf,Z0,Z0,eta);
+TauD_A =  Double_cloison_Tau_Num_AM_MatTra(h1,h2,E1,E2,f,k0,theta,rho,rho,nu,nu,e,0.02,kf,Zf,Z0,Z0,eta);
 TauD=  Double_cloison_Tau_Num_MatTra(h1,h2,E1,E2,f,k0,theta,rho,rho,nu,nu,e,k0,Z0,Z0,Z0,eta);
 
-TauD2_A =  Double_cloison_Tau_Num_MatTra(h2,h3,E2,E3,f,kf,theta,rho,rho,nu,nu,L,kf,Zf,Z0,Z0,eta);
+% TauD2_A =  Double_cloison_Tau_Num_MatTra(h2,h3,E2,E3,f,k0,theta,rho,rho,nu,nu,L,kf,Zf,Z0,Z0,eta);
+TauD2_A =  Double_cloison_Tau_Num_AM_MatTra(h2,h3,E2,E3,f,k0,theta,rho,rho,nu,nu,L,0.02,kf,Zf,Z0,Z0,eta);
+
 TauD2 =  Double_cloison_Tau_Num_MatTra(h2,h3,E2,E3,f,k0,theta,rho,rho,nu,nu,L,k0,Z0,Z0,Z0,eta);
 
 
 %% calcul plaque triple + armotissement
 TauT = triple_cloison_Tau_Num_MatTra(h1,h2,h3,E1,E2,E3,f,k0,theta,rho,rho,rho,nu,nu,nu,e,L,k0,k0,Z0,Z0,Z0,Z0,eta);
-TauT_A = triple_cloison_Tau_Num_MatTra(h1,h2,h3,E1,E2,E3,f,kf,theta,rho,rho,rho,nu,nu,nu,e,L,kf,kf,Zf,Zf,Zf,Z0,eta);
+% TauT_A = triple_cloison_Tau_Num_MatTra(h1,h2,h3,E1,E2,E3,f,k0,theta,rho,rho,rho,nu,nu,nu,e,L,kf,kf,Zf,Zf,Z0,Z0,eta);
+TauT_A = triple_cloison_Tau_Num_AM_MatTra(h1,h2,h3,E1,E2,E3,f,k0,theta,rho,rho,rho,nu,nu,nu,e,L,0.02,kf,kf,kf,Zf,Zf,Zf,Z0,Z0,eta);
 
 %% Plot
 
