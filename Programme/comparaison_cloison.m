@@ -1,15 +1,15 @@
 clear variables ; clc; close all
 addpath(genpath('./fonctions'));
 
-f=permute(100:1:20e3,[ 1 3 2]);
+f=permute(20:1:20e3,[ 1 3 2]);
 
 %% parameters of the plate
-h1=10e-3; % epaisseur de la plaque 1
-h2=20e-3; % epaisseur de la plaque 1
-h3 =10e-3;
+h1=19e-3; % epaisseur de la plaque 1
+h2=12.7e-3; % epaisseur de la plaque 1
+h3 =1e-3;
 
-E1=12.6e9; %young modulus plaque 1 
-E2= 12.2e9; %young modulus plaque 2 
+E1=4e9; %young modulus plaque 1 
+E2= 4e9; %young modulus plaque 2 
 E3 = E1;
 
 rho=750; % densité plaque
@@ -25,12 +25,12 @@ D3= E3*h3^3/(12*(1-nu^2));
 
 %% parameters of the air 
 
-e=0.2; % espace entre les cloisons 1 et 2
-L=0.35; % espace entre les cloisons 2 et 3
+e=0.1; % espace entre les cloisons 1 et 2
+L=0.22; % espace entre les cloisons 2 et 3
 c0=343; % vitesse de l'air
 rho0=1.2;
 Z0=rho0.*c0;
-thetad=80;
+thetad=40;
 theta=thetad*pi/180;
 TH = cos(theta);
 omega = f*2*pi;

@@ -1,4 +1,4 @@
-clear variable; clc; close all
+% clear variable; clc; close all
 addpath(genpath('./fonctions'));
 
 %% parameters of the plate
@@ -24,7 +24,7 @@ D3= E3*h3^3/(12*(1-nu^2));
 
 e=0.2; % espace entre les cloisons 1 et 2
 L=0.35; % espace entre les cloisons 2 et 3
-
+figure
 %% simple cloison
 
 c0=343; % vitesse de l'air
@@ -53,7 +53,7 @@ hold on
 %% Double cloison
 Tau = Double_cloison_Tau_symf_theta(h1,h2,E1,E2,f,theta,rho,nu,nu,e);
 % T_dif= 2*vpaintegral(Tau*cos(theta)*sin(theta),theta,0,70*pi/180);
-%
+
 fn=20:25:16000;
 Tc=zeros(length(fn),1);
 

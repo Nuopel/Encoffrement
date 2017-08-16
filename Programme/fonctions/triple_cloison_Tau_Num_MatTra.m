@@ -51,7 +51,7 @@ Tf = [cos(kx*e) 1j.*Zf./cos(thetaf).*sin(kx.*e); 1j.*cos(thetaf)./Zf.*sin(kx.*e)
 %% Transfer matrix linked to the porous eq fluid layer 2
 thetaf2 = asin(k.*sin(theta)./kf);
 kx2 = kf2.*cos(thetaf2);
-Tf2 = [cos(kx2*e2) 1j.*Zf2./cos(thetaf2).*sin(kx2.*e); 1j.*cos(thetaf2)./Zf.*sin(kx2.*e) cos(kx2*e) ];
+Tf2 = [cos(kx2*e2) 1j.*Zf2./cos(thetaf2).*sin(kx2.*e2); 1j.*cos(thetaf2)./Zf.*sin(kx2.*e2) cos(kx2*e2) ];
 
 %% Transfer matrix linked to the plates
     kp1 = (omega).^(1/4).*sqrt(mu1/D1);
@@ -61,7 +61,7 @@ Tf2 = [cos(kx2*e2) 1j.*Zf2./cos(thetaf2).*sin(kx2.*e); 1j.*cos(thetaf2)./Zf.*sin
 
       Zpl1 = D1*(k.^4.*sin(theta).^4-kp1.^(2).*omega.^(3/2))./( 1j.*omega); 
       Zpl2= D2*(k.^4.*sin(theta).^4-kp2.^(2).*omega.^(3/2))./( 1j.*omega); 
-      Zpl3= D2*(k.^4.*sin(theta).^4-kp3.^(2).*omega.^(3/2))./( 1j.*omega); 
+      Zpl3= D3*(k.^4.*sin(theta).^4-kp3.^(2).*omega.^(3/2))./( 1j.*omega); 
 
     Tpl1 = [ I Zpl1 ; o I];
     Tpl2 = [ I Zpl2 ; o I];

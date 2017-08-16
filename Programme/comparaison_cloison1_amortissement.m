@@ -7,8 +7,9 @@ omega = 2*pi*f;
 h1=5e-3; % epaisseur de la plaque 1
 h2=10e-3; % epaisseur de la plaque 2
 
-E1=12.6e9; %young modulus plaque 1 
-E2=13.6e9; %young modulus plaque 1 
+eta = 0.01;
+E1=12.6e9*(1+eta*1j); %young modulus plaque 1 
+E2=13.6e9*(1+eta*1j); %young modulus plaque 1 
 
 rho=750; % densité plaque
 nu=0.245; % coefficient de poisson MDF
@@ -19,23 +20,23 @@ mu2= rho*h2; % poid surfacique de la plaque 1
 D1= E1*h1^3/(12*(1-nu^2));
 D2= E2*h2^3/(12*(1-nu^2));
 
-e=0.05;
+e=0.1;
 %% parameters of the porous material
     %melamine
-    sigma =10900;      % [N.s.m-4] Static air flow resistivity of material
-    h     = 2*2.54e-2;       % [m] Thickness of material
-    phi_p   = 0.99;  % [/] Porosity
-    lambda = 100e-6 ;     % [um] Viscous length
-    lambdap  = 130e-6;    % [um] Thermic length 
-    tortu = 1;    % [/] Tortuosity
+%     sigma =10900;      % [N.s.m-4] Static air flow resistivity of material
+%     h     = 2*2.54e-2;       % [m] Thickness of material
+%     phi_p   = 0.99;  % [/] Porosity
+%     lambda = 100e-6 ;     % [um] Viscous length
+%     lambdap  = 130e-6;    % [um] Thermic length 
+%     tortu = 1;    % [/] Tortuosity
 %     
 %     %% glass wool ?
-%     sigma =9000;      % [N.s.m-4] Static air flow resistivity of material
-%     h     = e;       % [m] Thickness of material
-%     phi_p   = 0.968;  % [/] Porosity
-%     lambda = 57e-6 ;     % [um] Viscous length
-%     lambdap  = 123e-6;    % [um] Thermic length 
-%     tortu = 1.0295;    % [/] Tortuosity
+    sigma =9000;      % [N.s.m-4] Static air flow resistivity of material
+    h     = e;       % [m] Thickness of material
+    phi_p   = 0.968;  % [/] Porosity
+    lambda = 57e-6 ;     % [um] Viscous length
+    lambdap  = 123e-6;    % [um] Thermic length 
+    tortu = 1.0295;    % [/] Tortuosity
 %     
 %         %% rock wool ?
 %     sigma =20600;      % [N.s.m-4] Static air flow resistivity of material

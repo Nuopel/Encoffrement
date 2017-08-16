@@ -4,13 +4,13 @@ addpath(genpath('./fonctions'));
 f=permute(20:10:20e3,[1 3 2]);
 omega = 2*pi*f;
 %% parameters of the plate
-h1=20e-3; % epaisseur de la plaque 1
-h2=10e-3; % epaisseur de la plaque 2
-h3=5e-3; % epaisseur de la plaque 3
+h1=19e-3; % epaisseur de la plaque 1
+h2=12.5e-3; % epaisseur de la plaque 2
+h3=6.3e-3; % epaisseur de la plaque 3
 
-E1=12.6e9; %young modulus plaque 1 
-E2=13.6e9; %young modulus plaque 2
-E3=13.6e9; %young modulus plaque 3 
+E1=2.3e9; %young modulus plaque 1 
+E2=3e9; %young modulus plaque 2
+E3=3e9; %young modulus plaque 3 
 
 rho=750; % densité plaque
 nu=0.245; % coefficient de poisson MDF
@@ -58,8 +58,8 @@ Tau_p1_A  = Simple_cloison_Tau_Num_AM_TransMa(h1,E1,f,k0,theta,rho,nu,Z0,Z0,e,kf
 Tau_p2_A  = Simple_cloison_Tau_Num_TransMa(h2,E2,f,kf,theta,rho,nu,Zf,Z0,eta); % plaque 1 seule
 Tau_p3_A  = Simple_cloison_Tau_Num_TransMa(h3,E3,f,kf,theta,rho,nu,Zf,Z0,eta); % plaque 1 seule
 
-TauD_A =  Double_cloison_Tau_Num_AM_MatTra(h1,h2,E1,E2,f,k0,theta,rho,rho,nu,nu,e,0.02,kf,Zf,Z0,Z0,eta);
-TauD=  Double_cloison_Tau_Num_MatTra(h1,h2,E1,E2,f,k0,theta,rho,rho,nu,nu,e,k0,Z0,Z0,Z0,eta);
+TauD_A =  Double_cloison_Tau_Num_AM_MatTra(h1,h2*2,E1,E2,f,k0,theta,rho,rho,nu,nu,e,0.02,kf,Zf,Z0,Z0,eta);
+TauD=  Double_cloison_Tau_Num_MatTra(h1,h2*2,E1,E2,f,k0,theta,rho,rho,nu,nu,e,k0,Z0,Z0,Z0,eta);
 
 % TauD2_A =  Double_cloison_Tau_Num_MatTra(h2,h3,E2,E3,f,k0,theta,rho,rho,nu,nu,L,kf,Zf,Z0,Z0,eta);
 TauD2_A =  Double_cloison_Tau_Num_AM_MatTra(h2,h3,E2,E3,f,k0,theta,rho,rho,nu,nu,L,0.02,kf,Zf,Z0,Z0,eta);
