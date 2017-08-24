@@ -36,20 +36,14 @@ omega = 2*pi*f;
 D= E1*h1^3/(12*(1-nu^2));
 k0 = omega/c0;
 Tau = Simple_cloison_Tau_Num(h1,E1,f,theta,rho,nu); % plaque 1 seule
-Tau2 = Simple_cloison_Tau_syms_TransMa(h1,E1,f,k0,theta,rho,nu,Z0,Z0,eta); % plaque 1 seule
-
 % T_dif= 2*vpaintegral(Tau*cos(theta)*sin(theta),theta,0,70*pi/180);
 %%
 fn=20:5:14000;
 Tc=zeros(length(fn),1);
-Tc2=zeros(length(fn),1);
 T_dif = matlabFunction(Tau*cos(theta)*sin(theta));
-T_dif2 = matlabFunction(Tau2*cos(theta)*sin(theta));
-
 tic
 for ii=1:length(fn)
  Tc(ii)=integral(@(theta)T_dif(fn(ii),theta),0,60*pi/180);
- Tc12(ii)=integral(@(theta)T_dif2(fn(ii),theta),0,60*pi/180);
 % Tc(ii)=double(subs(T_dif,f,fn(ii)));
 fprintf('%i pc \n',round(ii/length(fn)*100))
 end
@@ -96,16 +90,14 @@ toc
 %%
 figure
 semilogx(fn,10*log10(1./Tc))
-hold on
-semilogx(fn,10*log10(1./Tc12),'--')
-
+hold on 
 semilogx(fn3,10*log10(abs(1./Tc3)))
-semilogx(fn3,10*log10(abs(1./Tc32)),'--')
+semilogx(fn3,10*log10(abs(1./Tc32)))
 
 semilogx(fn2,10*log10(abs((1./Tc2))))
 semilogx(fn2,10*log10(abs((1./Tc22))),'--')
 
-legend('Simple cloison','Simple cloison MT','Triple cloison système','Triple cloison MT','Double cloison système','Double cloison MT')
+legend('Simple cloison','Triple cloison système','Triple cloison MT','Double cloison système','Double cloison MT')
 xlabel('Frequence [Hz] log')
 ylabel('Indice d''affaiblissement diffus 10log_{10}')
 ylim([0 140])

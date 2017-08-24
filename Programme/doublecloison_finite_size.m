@@ -25,7 +25,7 @@ D2= E2*h2^3/(12*(1-nu^2));
 %% parameters of the air 
 
 e=0.05; % espace entre les cloisons
-thetad=40;
+thetad=80;
 theta = thetad*pi/180;
 [ Tau ] = Double_cloison_Tau_Num(h1,h2,E1,E2,f,theta,rho,nu,nu,e);
 
@@ -72,5 +72,10 @@ end
 % plot([402 402],[0 250],'b')
 xlim([f(1) f(end)])
 legend('Cloison double','cloison double finitesize','Plaque 1', 'Plaque2')
+
+figure 
+semilogx(f,20*log10(abs(sig)))
+hold on
+semilogx(f,20*log10(abs(sig_inf)))
 
 % % fre=1/(2*pi)*sqrt(2*rho0*(c0)^2/(e*mu*cosd(thetad)^2))

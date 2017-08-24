@@ -20,7 +20,7 @@ mu2= rho*h2; % poid surfacique de la plaque 1
 D1= E1*h1^3/(12*(1-nu^2));
 D2= E2*h2^3/(12*(1-nu^2));
 
-e=0.1; % espace entre les cloisons
+e=0.03; % espace entre les cloisons
 
 %% parameters of the porous material
     %melamine
@@ -40,7 +40,7 @@ e=0.1; % espace entre les cloisons
 %     tortu = 1.0295;    % [/] Tortuosity
 %     
 %         %% rock wool ?
-    sigma =26000;      % [N.s.m-4] Static air flow resistivity of material
+    sigma =20600;      % [N.s.m-4] Static air flow resistivity of material
     h     = e;       % [m] Thickness of material
     phi_p   = 0.98;  % [/] Porosity
     lambda = 85e-6 ;     % [um] Viscous length
@@ -102,7 +102,7 @@ fc2=c0^2/2/pi/(sin(theta)^2)*sqrt(mu2/D2);% fréquence de coincidence p2fc1
     
     figure(2)
         plot(f, ( alpha_MIK))
-%         xlim([0.01 * sigma, sigma])
+        xlim([0.01 * sigma, sigma])
         xlabel('Freq [Hz]')
         ylabel('Absorption ')
         legend('Miki')
@@ -120,7 +120,6 @@ fc2=c0^2/2/pi/(sin(theta)^2)*sqrt(mu2/D2);% fréquence de coincidence p2fc1
         semilogx(f,10*log10(1./abs(TauD)))
         hold  on
         semilogx(f,10*log10(1./abs(TauD_A)))
-        semilogx(f,10*log10(1./abs(TauD_A_MT)),'--')
         xlabel('Frequence [Hz] log')
         ylabel('Indice d''affaiblissement 10log_{10}{1/\tau}')
         for ii = 1:5
@@ -131,6 +130,6 @@ fc2=c0^2/2/pi/(sin(theta)^2)*sqrt(mu2/D2);% fréquence de coincidence p2fc1
         plot([fc2 fc2],[0 250],'r')
         plot([1*c0/(2*e*cosd(thetad)) 1*c0/(2*e*cosd(thetad))],[0 250],'g')
         xlim([f(1) f(end)])
-        legend('Double cloison','Double cloison+amortissement','Double cloison MT+amortissement')
+        legend('Double cloison','Double cloison+amortissement')
 
 %     FigurePlacecement(1)

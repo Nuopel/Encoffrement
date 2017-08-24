@@ -4,33 +4,35 @@ addpath(genpath('./fonctions'));
 f=permute(20:1:20e3,[ 1 3 2]);
 
 %% parameters of the plate
-h1=19e-3; % epaisseur de la plaque 1
-h2=12.7e-3; % epaisseur de la plaque 1
-h3 =1e-3;
-
-E1=4e9; %young modulus plaque 1 
-E2= 4e9; %young modulus plaque 2 
-E3 = E1;
-
+h1=3/4*2.54e-2; % epaisseur de la plaque 1
+h2=1/2*2.54e-2; % epaisseur de la plaque 1
+h3=1/4*2.54e-2;
+% 
+E1=2.3e9; %young modulus plaque 1 
+E2=3e9; %young modulus plaque 2
+E3=3e9; %young modulus plaque 3 
+% 
 rho=750; % densité plaque
 nu=0.245; % coefficient de poisson MDF
-
+% 
 mu1= rho*h1; % poid surfacique de la plaque 1 
 mu2= rho*h2; % poid de la plaque 2
 mu3= rho*h3; % poid de la plaque 2
-
+% 
 D1= E1*h1^3/(12*(1-nu^2));
 D2= E2*h2^3/(12*(1-nu^2));
 D3= E3*h3^3/(12*(1-nu^2));
 
+
+e=0.03; % espace entre les cloisons 1 et 2
+L=0.08; % espace entre les cloisons 2 et 3
+
 %% parameters of the air 
 
-e=0.1; % espace entre les cloisons 1 et 2
-L=0.22; % espace entre les cloisons 2 et 3
 c0=343; % vitesse de l'air
 rho0=1.2;
 Z0=rho0.*c0;
-thetad=40;
+thetad=89;
 theta=thetad*pi/180;
 TH = cos(theta);
 omega = f*2*pi;
