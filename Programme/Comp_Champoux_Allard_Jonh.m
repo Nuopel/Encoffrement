@@ -1,5 +1,5 @@
 % 
-%  File    :   Test_Delany-Bazley-Miki.m 
+%  File    :   Comp_Champoux-Allard-Jonh.m 
 % 
 % Author1: Samuel Dupont
 % Date:    January 2017 
@@ -24,56 +24,57 @@ addpath(genpath('../Toolbox'));
    
     rho_0 = 1.213;      % [Kg.m-3] density at rest of air at 18C, 1atm
     c_0   = 342.2;      % [m.s-1] speed of sound in air at 18C, 1atm
-    sigma = 30000 ;       % [N.s.m-4] static air flow resistivity of material
-    h     = 0.05 ;       % [m] thickness of material
-    phi   = 0.98 ;
-    lambda = 70 ; 
-    lambdap  = 210;
-    tortu = 1.1; 
+
+    %         %% rock wool ?
+    sigma =20600;      % [N.s.m-4] Static air flow resistivity of material
+    h     = 0.1;       % [m] Thickness of material
+    phi   = 0.98;  % [/] Porosity
+    lambda = 85e-6 ;     % [um] Viscous length
+    lambdap  = 90e-6;    % [um] Thermic length 
+    tortu = 1.01;    % [/] Tortuosity
 
 %% Verification
     fprintf('The valid range for the Porous material is %g-%g Hz \n',0.01 * sigma, sigma) 
     U = rho_0 * f / sigma;
 
-%% Delany and Bazley model
-    
-    Z_DB = rho_0*c_0 * ( 1 + 0.0571*U.^(-0.754) - 1i*0.087*U.^(-0.732) ); 
-    km_DB = omega./c_0 .* ( 1 + 0.0978*U.^(-0.7) - 1i * 0.189*U.^(-0.595) );
-    
 %% Miki Model
     Z_MIK = rho_0*c_0 * ( 1 + 0.0785*U.^(-0.632) - 1i*0.120*U.^(-0.632) ); 
     km_MIK = omega./c_0 .* ( 1 + 0.122*U.^(-0.618) - 1i * 0.180*U.^(-0.618) );
-    
-    
-%%  Calculation for a rigid Wall
-    Z_0 = rho_0*c_0;
+%% Jac Model    
+[Zcf,kf] = ChampouxA1j_coef(omega,phi,sigma,tortu,lambda,lambdap);
 
-    % Delany Bazley
-    Z_p_DB = -1i.* Z_DB .*cot(km_DB*h);
-    alpha_DB = 1 - ( abs( (Z_p_DB-Z_0)./ (Z_p_DB+Z_0) ) ).^2;
+%%  Calculation for a rigid Wall
+    Z_0=rho_0*c_0; 
+  % JAC
+    Z_p_jac = -1i.* Zcf .*cot(kf*h);
+    alpha_jac = 1 - ( abs( (Zcf-Z_0)./ (Zcf+Z_0) ) ).^2;
     % Miki
     Z_p_MIK = -1i.*Z_MIK .*cot(km_MIK*h);
     alpha_MIK = 1 - ( abs( (Z_p_MIK-Z_0)./( Z_p_MIK +Z_0) ) ).^2;
     
-%% Plot
+%% Plot(
+
+    if sigma > f(end)
+        sigma = 10000;
+    end
     figure(1)
     subplot(211)
-        plot(f, real([Z_p_DB Z_p_MIK])/(rho_0*c_0))
+        plot(f, real([Z_p_jac Z_p_MIK])/(rho_0*c_0))
         xlim([0.01 * sigma, sigma])
         xlabel('Freq [Hz]')
         ylabel('Re(Z)')
-        legend('Delany Bazley','Miki')
+        legend('JAC','MIK')
     
     subplot(212)
-        plot(f, imag([Z_p_DB Z_p_MIK])/(rho_0*c_0))
+        plot(f, imag([Z_p_jac Z_p_MIK])/(rho_0*c_0))
         xlim([0.01 * sigma, sigma])
         xlabel('Freq [Hz]')
         ylabel('Imag(Z)')
-        legend('Delany Bazley','Miki')
+        legend('JAC','MIK')
     
     figure(2)
-        plot(f, ([alpha_DB alpha_MIK]))
-        xlim([0.01 * sigma, sigma])
+        semilogx(f, ([alpha_MIK alpha_jac ]))
+        xlim([0.0 * sigma, sigma])
         xlabel('Freq [Hz]')
         ylabel('Absorption ')
-        legend('Delany Bazley','Miki')
+        legend('Miki','JAC')
